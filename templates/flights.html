@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Flight Planner</title>
+</head>
+<body>
+    {% for flight in flights %}
+        {{ flight.dispatch_name }}<br>
+        {{ flight.flight_inbound }}<br>
+        {{ flight.registration }}<br>
+        {{ flight.aircraft }}<br>
+        {{ flight.from }}<br>
+        {{ flight.STA }}<br>
+        {{ flight.pax_inbound }}<br>
+        {{ flight.arrival }}<br>
+        {{ flight.flight_outbound }}<br>
+        {{ flight.to }}<br>
+        {{ flight.STD }}<br>
+        {{ flight.stand }}<br>
+        {{ flight.pax_outbound }}<br>
+        {{ flight.comments }}<br>
+        {{ flight.date }}<br>    
+    {% endfor %}
+</body>
+</html>
+
+
+
