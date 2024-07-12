@@ -7,6 +7,13 @@ body {
 }
 
 .sidenav {
-  background-color:#e57373;
+  background-color:#d32f2f;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+  #eyeIcon {
+      font-size: 14px; /* Adjust size for smaller screens */
+  }
 }
 
