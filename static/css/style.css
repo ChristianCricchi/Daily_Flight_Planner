@@ -1,5 +1,7 @@
 body {
     background: url("../images/background.jpg") no-repeat fixed center center/cover;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 200;
 }
 
 .text-shadow {
