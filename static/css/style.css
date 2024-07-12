@@ -16,6 +16,10 @@ body {
   text-shadow: 2px 2px 2px purple;
 }
 
+.form-spacing {
+  margin-top: 50px; 
+}
+
 /* Media Queries */
 @media (max-width: 480px) {
   #eyeIcon {
