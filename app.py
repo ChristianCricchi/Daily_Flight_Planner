@@ -28,6 +28,24 @@ def get_flights():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if the username already exists in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Hello, Username already exists!")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")) 
+        }  
+        mongo.db.users.insert_one(register)  
+
+        # Store the authenticated user's data in a session cookie
+        session["user"] = request.form.get("username").lower()
+        flash("User account created!")  
     return render_template("register.html")
 
 

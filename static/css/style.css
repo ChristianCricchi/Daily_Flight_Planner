@@ -28,12 +28,19 @@ h3 {
  .sidenav li a {
   font-size: 1.3rem;
   color: white;
-  text-shadow: 2px 2px 2px purple;
+  text-shadow: 2px 2px 2px #ad1457;
 }
 
 .form-spacing {
   margin-top: 50px; 
 }
+
+.flashes h4 {
+  line-height: 2;
+  color: white;
+  text-shadow: 2px 2px 2px #ad1457;
+}
+
 
 /* Media Queries */
 @media (max-width: 480px) {
