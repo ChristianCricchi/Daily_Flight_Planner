@@ -29,7 +29,7 @@ def get_flights():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if the username already exists in the database
+        # Check if the username already exists in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -45,34 +45,48 @@ def register():
 
         # Store the authenticated user's data in a session cookie
         session["user"] = request.form.get("username").lower()
-        flash("User account created!")  
+        flash("User account created!") 
+        return redirect(url_for("profile", username=session["user"])) 
+
     return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
+        # Check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
+            # Ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome at DFPlanner {}".format(request.form.get("username")))
+                    flash("Welcome at DFPlanner {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "profile", username=session["user"])) 
             else:
-                # invalid password match
+                # Invalid password match
                 flash("Incorrect Username and/or Password, please try again!")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            # Username doesn't exist
             flash("Incorrect Username and/or Password, please try again!")
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # Grab the session user's username from database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
+
 
 
 if __name__ == "__main__":
