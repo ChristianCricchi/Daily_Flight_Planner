@@ -1,41 +1,40 @@
 {% extends "base.html" %}
-{% block content %} 
+{% block content %}
 
-    {% for flight in flights %}
-        {{ flight.dispatch_name }}<br>
-        {{ flight.flight_inbound }}<br>
-        {{ flight.registration }}<br>
-        {{ flight.aircraft }}<br>
-        {{ flight.from }}<br>
-        {{ flight.STA }}<br>
-        {{ flight.pax_inbound }}<br>
-        {{ flight.arrival }}<br>
-        {{ flight.flight_outbound }}<br>
-        {{ flight.to }}<br>
-        {{ flight.STD }}<br>
-        {{ flight.stand }}<br>
-        {{ flight.pax_outbound }}<br>
-        {{ flight.comments }}<br>
-        {{ flight.date }}<br>    
-    {% endfor %}
-
+<div class="container white">
     <ul class="collapsible">
-      <li>
-          <div class="collapsible-header white-text pink darken-4 text-shadow"><i class="fas fa-angle-down"></i>First</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-      <li>
-          <div class="collapsible-header white-text pink darken-4 text-shadow"><i class="fas fa-angle-down"></i>Second</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-      <li>
-          <div class="collapsible-header white-text pink darken-4 text-shadow"><i class="fas fa-angle-down"></i>Third</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-  </ul>
-                   
+        {% for flight in flights %}
+        <li>
+            <div class="collapsible-header white-text pink darken-4 text-shadow">
+                <i class="fas fa-angle-down"></i>
+                <strong>{{ flight.dispatch_name }}</strong> : {{ flight.date }}
+                {% if flight.special_assistance == "on" %}
+                    <i class="fas fa-exclamation-circle white-text text-lighten-2 tooltipped"
+                        data-position="right" data-tooltip="Special Assistance!"></i>
+                {% endif %}
+            </div>
+            <div class="collapsible-body">
+                <p>{{ flight.stand }}</p>
+                {{ flight.comments }}
+                <p>------------------------</p>
+                <p>{{ flight.flight_inbound }}</p>
+                <p>{{ flight.from }}</p>
+                <p>{{ flight.registration }}</p>
+                <p>{{ flight.aircraft }}</p>
+                <p>{{ flight.STA }}</p>
+                <p>{{ flight.pax_inbound }}</p>
+                <p>{{ flight.arrival }}</p>
+                <p>------------------------</p>
+                <p>{{ flight.flight_outbound }}</p>
+                <p>{{ flight.to }}</p>
+                <p>{{ flight.registration }}</p>
+                <p>{{ flight.aircraft }}</p>
+                <p>{{ flight.STD }}</p>              
+                <p>{{ flight.pax_outbound }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock %}
-
-
-

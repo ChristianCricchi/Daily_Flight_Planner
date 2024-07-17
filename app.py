@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_flights")
 def get_flights():
-    flights = mongo.db.flights.find()
+    flights = list(mongo.db.flights.find())
     return render_template("flights.html", flights=flights)
 
 

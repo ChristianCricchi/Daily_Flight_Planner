@@ -46,6 +46,10 @@ h3 {
     font-size: 1.3rem;
 }
 
+.fas.fa-exclamation-circle {
+   margin-left: 10px; /* Space from the text */
+}
+
 /* Media Queries */
 @media (max-width: 480px) {
   #eyeIcon {
