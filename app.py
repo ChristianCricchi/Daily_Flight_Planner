@@ -20,6 +20,15 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+
+# new
+@app.route("/")
+def index():
+    if 'user' in session:
+        return redirect(url_for('get_flights'))
+    return redirect(url_for('login'))
+
+
 @app.route("/get_flights")
 def get_flights():
     flights = list(mongo.db.flights.find())
