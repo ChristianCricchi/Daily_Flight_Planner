@@ -5,6 +5,18 @@
         <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">Add Flight</h3>
         <form class="col s12" method="POST" action="">
             <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open pprefix text-darken-4" style="color: #e91e63;"></i>
+                    <select id="dispatch_name" name="dispatch_name" class="validate" required>
+                        <option value="" disabled selected>Choose Dispatcher</option>
+                        {% for dispatch in dispatcher %}
+                            <option value="{{ dispatch.dispatch_name }}">{{ dispatch.dispatch_name }}</option>
+                        {% endfor %}    
+                    </select>
+                    <label for="dispatch_name">Dispatcher</label>
+                  </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s6">
                     <i class="fas fa-thin fa-parking prefix text-darken-4" style="color: #e91e63;"></i>
                     <input id="stand" name="stand" minlength="5" maxlength="10"

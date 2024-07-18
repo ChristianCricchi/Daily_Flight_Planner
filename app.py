@@ -111,8 +111,8 @@ def logout():
 
 @app.route("/add_flight")
 def add_flight():
-    return render_template("add_flight.html")
-
+    dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
+    return render_template("add_flight.html", dispatcher=dispatcher)
 
 
 if __name__ == "__main__":
