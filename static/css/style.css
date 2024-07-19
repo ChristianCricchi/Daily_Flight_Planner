@@ -50,6 +50,15 @@ h3 {
    margin-left: 10px; /* Space from the text */
 }
 
+.btn-small {
+  margin: 5px;
+}
+
+.collapsible-header .col strong {
+  margin: 5px;
+  line-height: 42px;
+}
+
 /* Media Queries */
 @media (max-width: 480px) {
   #eyeIcon {
