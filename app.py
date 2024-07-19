@@ -21,13 +21,6 @@ mongo = PyMongo(app)
 
 @app.route("/")
 
-# new
-@app.route("/")
-def index():
-    if 'user' in session:
-        return redirect(url_for('get_flights'))
-    return redirect(url_for('login'))
-
 
 @app.route("/get_flights")
 def get_flights():
@@ -109,8 +102,34 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_flight")
+@app.route("/add_flight", methods=["GET", "POST"])
 def add_flight():
+    if request.method == "POST":
+        special_assistance = "on" if request.form.get("special_assistance") else "off"
+        flight = {
+            "dispatch_name": request.form.get("dispatch_name"),
+            "stand": request.form.get("stand"),
+            "comments": request.form.get("comments"),
+            "special_assistance": special_assistance,
+            "date": request.form.get("date"),
+            "flight_inbound": request.form.get("flight_inbound"),
+            "from": request.form.get("from"),
+            "registration": request.form.get("registration"),
+            "aircraft": request.form.get("aircraft"),
+            "sta": request.form.get("sta"),
+            "pax_inbound": request.form.get("pax_inbound"),
+            "arrival": request.form.get("arrival"),
+            "flight_outbound": request.form.get("flight_outbound"),
+            "to": request.form.get("to"),
+            "std": request.form.get("std"),
+            "pax_outbound": request.form.get("pax_outbound"),
+            "gate": request.form.get("gate"),
+            "created_by": session["user"]
+        }
+        mongo.db.flights.insert_one(flight)
+        flash("Flight Successfully Added")
+        return redirect(url_for("get_flights"))
+
     dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
     return render_template("add_flight.html", dispatcher=dispatcher)
 
