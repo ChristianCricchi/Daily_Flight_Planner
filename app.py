@@ -20,6 +20,8 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def home():
+    return redirect(url_for("get_flights"))
 
 
 @app.route("/get_flights")
@@ -134,6 +136,13 @@ def add_flight():
     return render_template("add_flight.html", dispatcher=dispatcher)
 
 
+@app.route("/edit_flight/<flight_id>", methods=["GET", "POST"])
+def edit_flight(flight_id):
+    flight = mongo.db.flights.find_one({"_id": ObjectId(flight_id)})
+
+    dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
+    return render_template("edit_flight.html", flight=flight, dispatcher=dispatcher)
+      
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

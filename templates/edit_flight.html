@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row white">
+        <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">Add Flight</h3>
+        <form class="col s12" method="POST" action="{{ url_for('edit_flight', flight_id=flight._id) }}">
+            <!-- dispatcher name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open pprefix text-darken-4" style="color: #e91e63;"></i>
+                    <select id="dispatch_name" name="dispatch_name" class="validate" required>
+                        <option value="" disabled selected>Choose Dispatcher</option>
+                        {% for dispatch in dispatcher %}
+                            <option value="{{ dispatch.dispatch_name }}">{{ dispatch.dispatch_name }}</option>
+                        {% endfor %}    
+                    </select>
+                    <label for="dispatch_name">Dispatcher</label>
+                  </div>
+            </div>
+
+            <!-- stand section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-parking prefix text-darken-4" style="color: #e91e63;"></i>
+                    <input id="stand" name="stand" minlength="2" maxlength="20"
+                        type="text" class="validate" required>
+                    <label for="stand">Stand</label>
+                </div>
+
+                <!-- comment section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-comments prefix prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="comments" name="comments" minlength="5"
+                        maxlength="250" class="materialize-textarea validate" required></textarea>
+                    <label for="comments">Comments</label>
+                </div>
+            </div>
+
+            <!-- special assistance toggle -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <div class="switch">
+                        <i class="fas fa-exclamation-circle prefix text-darken-4" style="color: #e91e63;"></i>
+                        <label for="special_assistance">
+                            <input type="checkbox" id="special_assistance" name="special_assistance">
+                            <span class="lever"></span>
+                            Special Assistance
+                        </label>
+                    </div>    
+                </div>
+
+                 <!-- date picker -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-calendar-plus prefix text-darken-4" style="color: #e91e63;"></i>
+                    <input id="date" name="date" type="text" class="datepicker validate" required>
+                    <label for="date">Date</label>
+                </div>
+            </div>
+
+            <!-- flight inbound section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #e91e63;"></i>
+                    
+                    <textarea id="flight_inbound" name="flight_inbound" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="flight_inbound">Flight Inbound</label>
+                </div>
+                 
+                <!-- from section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-map prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="from" name="from" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="from">From</label>
+                </div>
+            </div>
+
+            <!-- registration section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="registration" name="registration" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="registration">Registration</label>
+                </div>
+                
+                <!-- type of aircraft section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="aircraft" name="aircraft" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="aircraft ">Type of Aircraft</label>
+                </div>
+            </div>
+
+            <!-- sta section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="sta" name="sta" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="sta">Scheduled Time Arr</label>
+                </div>
+                
+                <!-- passenger inbound section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="pax_inbound" name="pax_inbound" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="pax_inbound ">Passengers Inbound</label>
+                </div>
+            </div>
+
+            <!-- arrival section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="arrival" name="arrival" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="arrival">Arrival</label>
+                </div>
+                
+                <!-- flight outbound section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="flight_outbound" name="flight_outbound" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="flight_outbound ">Flight Outbound</label>
+                </div>
+            </div>
+
+            <!-- to section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-map prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="to" name="to" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="to">To</label>
+                </div>
+                 
+                <!-- std section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="std" name="std" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="std">Scheduled Time Dep</label>
+                </div>
+            </div>
+ 
+            <!-- Passengers Outbound -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="pax_outbound" name="pax_outbound" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="pax_outbound">Passengers Outbound</label>
+                </div>
+                
+                <!-- gate section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="gate" name="gate" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required></textarea>
+                    <label for="gate">Gate</label>
+                </div>
+            </div> 
+
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large pink darken-1 text-shadow">
+                        Edit Flight <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
