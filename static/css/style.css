@@ -59,6 +59,13 @@ h3 {
   line-height: 42px;
 }
 
+.button-container {
+    display: flex;
+    gap: 10px; /* Adjust the spacing between buttons as needed */
+    align-items: center; /* Vertically center the buttons */
+}
+
+
 /* Media Queries */
 @media (max-width: 480px) {
   #eyeIcon {
