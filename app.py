@@ -167,6 +167,14 @@ def edit_flight(flight_id):
     flight = mongo.db.flights.find_one({"_id": ObjectId(flight_id)})
     dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
     return render_template("edit_flight.html", flight=flight, dispatcher=dispatcher)
+
+
+@app.route("/dispatched_flight/<flight_id>")
+def dispatched_flight(flight_id):
+    mongo.db.flights.delete_one({"_id": ObjectId(flight_id)})
+    flash("Flight Successfully Dispatched")
+    return redirect(url_for("get_flights"))
+
       
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
