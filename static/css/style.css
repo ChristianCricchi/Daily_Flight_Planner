@@ -46,6 +46,19 @@ h3 {
     font-size: 1.3rem;
 }
 
+/* Media Queries */
+@media (max-width: 480px) {
+  #eyeIcon {
+      font-size: 14px; /* Adjust size for smaller screens */
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .custom-navbar .brand-logo {
+      font-size: 2.1rem;
+  }
+}
+
 .fas.fa-exclamation-circle {
    margin-left: 10px; /* Space from the text */
 }
@@ -65,18 +78,5 @@ h3 {
     align-items: center; /* Vertically center the buttons */
 }
 
-
-/* Media Queries */
-@media (max-width: 480px) {
-  #eyeIcon {
-      font-size: 14px; /* Adjust size for smaller screens */
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  .custom-navbar .brand-logo {
-      font-size: 2.1rem;
-  }
-}
 
 
