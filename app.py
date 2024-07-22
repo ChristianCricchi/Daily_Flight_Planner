@@ -138,8 +138,33 @@ def add_flight():
 
 @app.route("/edit_flight/<flight_id>", methods=["GET", "POST"])
 def edit_flight(flight_id):
-    flight = mongo.db.flights.find_one({"_id": ObjectId(flight_id)})
 
+    if request.method == "POST":
+        special_assistance = "on" if request.form.get("special_assistance") else "off"
+        submit = {
+            "dispatch_name": request.form.get("dispatch_name"),
+            "stand": request.form.get("stand"),
+            "comments": request.form.get("comments"),
+            "special_assistance": special_assistance,
+            "date": request.form.get("date"),
+            "flight_inbound": request.form.get("flight_inbound"),
+            "from": request.form.get("from"),
+            "registration": request.form.get("registration"),
+            "aircraft": request.form.get("aircraft"),
+            "sta": request.form.get("sta"),
+            "pax_inbound": request.form.get("pax_inbound"),
+            "arrival": request.form.get("arrival"),
+            "flight_outbound": request.form.get("flight_outbound"),
+            "to": request.form.get("to"),
+            "std": request.form.get("std"),
+            "pax_outbound": request.form.get("pax_outbound"),
+            "gate": request.form.get("gate"),
+            "created_by": session["user"]
+        }
+        mongo.db.flights.update_one({"_id": ObjectId(flight_id)}, {"$set": submit})
+        flash("Flight Successfully Updated")
+
+    flight = mongo.db.flights.find_one({"_id": ObjectId(flight_id)})
     dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
     return render_template("edit_flight.html", flight=flight, dispatcher=dispatcher)
       
