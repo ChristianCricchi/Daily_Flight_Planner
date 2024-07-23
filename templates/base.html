@@ -22,10 +22,10 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>  
                         <li><a href="{{ url_for('get_flights') }}">Home</a></li>
-                        <li><a href="{{ url_for('add_flight') }}">New Flight</a></li>
                     {% if session.user|lower == "AdminOps"|lower %}
                         <li><a href="{{ url_for('get_dispatch') }}">Dispatch</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('add_flight') }}">New Flight</a></li>
                     {% endif %}
                         <li><a href="#">Report</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -42,10 +42,10 @@
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('get_flights') }}">Home</a></li>
-                <li><a href="{{ url_for('add_flight') }}">New Flight</a></li>
                 {% if session.user|lower == "AdminOps"|lower %}
                     <li><a href="{{ url_for('get_dispatch') }}">Dispatch</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('add_flight') }}">New Flight</a></li>
                 {% endif %}
                     <li><a href="#">Report</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
