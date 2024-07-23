@@ -79,6 +79,16 @@ img {
   height: auto;
 }
 
+.custom-navbar .brand-logo {
+    margin-right: 10px; /* Space between logo and copyright text */
+}
+
+.brand-text {
+    font-size: 0.9rem; /* Adjust font size for copyright text */
+    line-height: 64px; /* Center vertically with the navbar */
+}
+
+
 /* Responsive Design */
 @media (max-width: 767px) {
     body {
