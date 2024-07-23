@@ -11,7 +11,7 @@
                     <select id="dispatch_name" name="dispatch_name" class="validate" required>
                         <option value="" disabled>Choose Dispatcher</option>
                         {% for dispatch in dispatcher %}
-                            {% if dispatch.dispatch_name == flight.dispatch_name  %}
+                            {% if dispatch.dispatch_name == flight.dispatch_name %}
                                 <option value="{{ dispatch.dispatch_name }}"selected>{{ dispatch.dispatch_name }}</option>
                             {% else %}
                                 <option value="{{ dispatch.dispatch_name }}">{{ dispatch.dispatch_name }}</option>

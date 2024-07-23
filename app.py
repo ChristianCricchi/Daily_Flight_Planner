@@ -175,6 +175,12 @@ def dispatched_flight(flight_id):
     flash("Flight Successfully Dispatched")
     return redirect(url_for("get_flights"))
 
+
+@app.route("/get_dispatch")
+def get_dispatch():
+    dispatch = list(mongo.db.dispatcher.find().sort("dispatch_name", 1))
+    return render_template("dispatch.html", dispatch=dispatch)
+
       
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
