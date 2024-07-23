@@ -1,15 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">Dispatch</h3>
+    <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">Dispatcher</h3>
 
     <div class="row">
-       {% for item in dispatch %}
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_dispatch') }}" class="btn-large pink darken-2 text-shadow">
+                Add Dispatch <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+       {% for dispatch in dispatch %}
             <div class="col s12 m6">
                 <div class="card pink darken-4 text-shadow center-align">
                     <div class="card-content white-text">
-                        <span class="card-title">{{ item.dispatch_name }}</span>
-                        <span class="card-title">{{ item.id }}</span>
+                        <span class="card-title">{{ dispatch.dispatch_name }}</span>
+                        <span class="card-title">{{ dispatch.id }}</span>
                     </div>
                     <div class="card-action">
                         <a href="#" class="btn green accent-4">Edit</a>

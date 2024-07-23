@@ -181,7 +181,21 @@ def get_dispatch():
     dispatch = list(mongo.db.dispatcher.find().sort("dispatch_name", 1))
     return render_template("dispatch.html", dispatch=dispatch)
 
-      
+
+@app.route("/add_dispatch", methods=["GET", "POST"])
+def add_dispatch():
+     if request.method == "POST":
+        dispatch = {
+            "dispatch_name": request.form.get("dispatch_name"),
+            "id": request.form.get("id"),
+        }
+        mongo.db.dispatcher.insert_one(dispatch)
+        flash("New Dispatcher Added")
+        return redirect(url_for("get_dispatch"))
+
+     return render_template("add_dispatch.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
