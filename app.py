@@ -21,13 +21,14 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    return redirect(url_for("get_flights"))
+    return redirect(url_for("login"))
 
 
 @app.route("/get_flights")
 def get_flights():
     flights = list(mongo.db.flights.find())
     return render_template("flights.html", flights=flights)
+
 
 
 @app.route("/register", methods=["GET", "POST"])
