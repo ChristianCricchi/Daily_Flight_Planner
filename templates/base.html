@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Daily_Flight_Planner</title>
+    <title>Daily Flight Planner</title>
 </head>
 <body>
-
-    <header>
+    <header class="fixed-header">
         <!--Top navbar-->
         <nav class="nav-extended  text-shadow pink darken-3 custom-navbar">
             <div class="nav-wrapper">
@@ -34,7 +33,6 @@
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                     {% endif %}
-               
             </div>
         </nav>
         
