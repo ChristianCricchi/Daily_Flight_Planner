@@ -107,3 +107,74 @@ img {
         gap: 10px;
     }
 }
+
+/* Additional styles for iPads */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        font-size: 1rem; /* Slightly larger font for iPads */
+    }
+
+    h3 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .sidenav {
+        width: 250px; /* Set a fixed width for sidenav */
+    }
+
+    .sidenav li a {
+        font-size: 1.3rem; /* Increase font size for sidenav links */
+    }
+
+    .custom-navbar,
+    .custom-navbar ul a {
+        font-size: 1.2rem; /* Adjust navbar font size */
+    }
+
+    .form-spacing {
+        margin-top: 40px; /* Increase spacing for forms */
+    }
+
+    .button-container {
+        flex-direction: row; /* Change to row for larger screens */
+        gap: 15px; /* Increase gap between buttons */
+    }
+}
+
+
+/* Media Query for iPad Pro 11-inch */
+@media only screen and (min-width: 834px) and (max-width: 834px) and (orientation: portrait) {
+    /* Styles for iPad Pro 11-inch in portrait mode */
+    .sidebar {
+        display: block; /* Ensure sidebar is displayed */
+        width: 250px; /* Set desired width */
+    }
+}
+
+/* Media Query for iPad Pro 11-inch Landscape */
+@media only screen and (min-width: 1194px) and (max-width: 1194px) and (orientation: landscape) {
+    /* Styles for iPad Pro 11-inch in landscape mode */
+    .sidebar {
+        display: block; /* Ensure sidebar is displayed */
+        width: 300px; /* Set desired width */
+    }
+}
+
+/* Media Query for iPad Pro 12.9-inch */
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
+    /* Styles for iPad Pro 12.9-inch in portrait mode */
+    .sidebar {
+        display: block; /* Ensure sidebar is displayed */
+        width: 250px; /* Set desired width */
+    }
+}
+
+/* Media Query for iPad Pro 12.9-inch Landscape */
+@media only screen and (min-width: 1366px) and (max-width: 1366px) and (orientation: landscape) {
+    /* Styles for iPad Pro 12.9-inch in landscape mode */
+    .sidebar {
+        display: block; /* Ensure sidebar is displayed */
+        width: 300px; /* Set desired width */
+    }
+}
+

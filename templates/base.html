@@ -16,7 +16,6 @@
         <!--Top navbar-->
         <nav class="nav-extended  text-shadow pink darken-3 custom-navbar">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_flights') }}"class="brand-logo center">DFPlanner</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                     <li><a href="#">DFPlanner</a></li>
@@ -53,6 +52,7 @@
                 {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 {% endif %}
+
         </ul>
     </header>
 
