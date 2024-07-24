@@ -85,8 +85,10 @@ img {
 
 .brand-text {
     font-size: 0.9rem; /* Adjust font size for copyright text */
-    line-height: 64px; /* Center vertically with the navbar */
+    line-height: 50px; /* Center vertically with the navbar */
 }
+
+
 
 
 /* Responsive Design */
@@ -150,6 +152,16 @@ img {
         gap: 15px; /* Increase gap between buttons */
     }
 }
+
+.custom-margin-top {
+    margin-top: 25px; /* Puoi regolare il valore in base alle tue necessità */
+}
+
+.custom-font-size {
+    font-size: 1.2em; /* Puoi regolare questo valore in base alle tue necessità */
+}
+
+
 
 
 /* Media Query for iPad Pro 11-inch */

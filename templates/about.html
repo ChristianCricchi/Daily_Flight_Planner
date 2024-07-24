@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row custom-margin-top">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <h3 class="center-align custom-font-size">Welcome to Daily Flight Planner!</h3>
+                <p class="custom-font-size">Here's some information about our app:</p>
+                <ol class="custom-font-size">
+                    <li><strong>Log In or Register:</strong> Start by logging in to your account. If you don't have one, you'll need to register first.</li>
+                    <li><strong>View Flights:</strong> On the home page, you can see all scheduled flights.</li>
+                    <li><strong>Add a New Flight:</strong> If you're an admin, you can add new flights to the schedule.</li>
+                    <li><strong>Edit or Delete Flights:</strong> Admins can also edit or delete existing flights as needed.</li>
+                    <li><strong>Check Dispatch:</strong> Admins have access to the dispatch page for additional operations.</li>
+                    <li><strong>Profile Management:</strong> Users can view and edit their profile information.</li>
+                </ol>
+                <p class="custom-font-size">If you have any questions or issues, please contact our support team.</p>
+
+                <div class="row center-align">
+                    <a href="{{ url_for('get_flights') }}" class="btn-large waves-effect waves-light pink darken-3">
+                        Go to Home Page
+                        <i class="fas fa-home right"></i>
+                    </a>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    
+{% endblock %}
