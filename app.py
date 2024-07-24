@@ -197,6 +197,22 @@ def add_dispatch():
      return render_template("add_dispatch.html")
 
 
+@app.route("/edit_dispatch/<dispatch_id>", methods=["GET", "POST"])
+def edit_dispatch(dispatch_id): 
+    if request.method == "POST":
+        submit = {
+            "dispatch_name": request.form.get("dispatch_name"),
+            "id": request.form.get("id"),
+        } 
+        mongo.db.dispatcher.update_one({"_id": ObjectId(dispatch_id)}, {"$set": submit})
+        flash("Dispatcher Successfully Updated")
+        return redirect(url_for("get_dispatch"))
+
+    dispatch = mongo.db.dispatcher.find_one({"_id": ObjectId(dispatch_id)})
+    return render_template("edit_dispatch.html", dispatch=dispatch)
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
