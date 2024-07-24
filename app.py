@@ -212,6 +212,12 @@ def edit_dispatch(dispatch_id):
     return render_template("edit_dispatch.html", dispatch=dispatch)
 
 
+@app.route("/delete_dispatch/<dispatch_id>")
+def delete_dispatch(dispatch_id):
+    mongo.db.dispatcher.delete_one({"_id": ObjectId(dispatch_id)})
+    flash("Dispatcher Successfully Deleted")
+    return redirect(url_for("get_dispatch"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
