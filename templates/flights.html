@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">All Daily Flights</h3>
 
 <div class="row card-panel grey lighten-5">
@@ -44,74 +45,108 @@
                         data-position="right" data-tooltip="Special Assistance!"></i>
                     {% endif %}
                 </div>
-
             </div>
             
-            <div class="collapsible-body">    
+            <div class="collapsible-body">
                 <div class="row">
-                    <div class="col s12 m12">
-                        <div class="card pink darken-4 text-shadow center-align">
-                            <div class="card-content white-text">
-                                <div class="row">
-                                    <div class="card-content white-text">
-                                    
-                                        <label for="id">Stand</label>
-                                        <span class="card-title">{{ flight.stand }}</span> 
-        
-                                        <label for="id">Comments</label>
-                                        <span class="card-title">{{ flight.comments }}</span>
-                                   
-                                        <label for="id">Flight Inbound</label>
-                                        <span class="card-title">{{ flight.flight_inbound }}</span>  
-                                    
-                                        <label for="id">From</label>
-                                        <span class="card-title">{{ flight.from }}</span> 
-                                
-                                    
-                                        <label for="id">Aircraft Registration</label>  
-                                        <span class="card-title">{{ flight.registration }}</span>  
-                                        
-                                        <label for="id">Type of Aircraft</label>
-                                        <span class="card-title">{{ flight.aircraft }}</span> 
-            
-                                        <label for="id">Scheduled Time of Arrival</label>
-                                        <span class="card-title">{{ flight.sta }}</span> 
-            
-                                        <label for="id">Passengers Inbound</label>
-                                        <span class="card-title">{{ flight.pax_inbound }}</span>
-            
-                                        <label for="id">Arrival</label>
-                                        <span class="card-title">{{ flight.arrival }}</span>
-            
-                                        <label for="id">Flight Outbound</label>
-                                        <span class="card-title">{{ flight.flight_outbound }}</span>
-            
-                                        <label for="id">To</label>
-                                        <span class="card-title">{{ flight.to }}</span>
-            
-                                        <label for="id">Aircraft Registration</label>
-                                        <span class="card-title">{{ flight.registration }}</span>  
-                                        
-                                        <label for="id">Type of Aircraft</label>
-                                        <span class="card-title">{{ flight.aircraft }}</span> 
-                                        
-                                        <label for="id">Scheduled Time of Departure</label>
-                                        <span class="card-title">{{ flight.std }}</span> 
-            
-                                        <label for="id">Passengers Outbound</label>
-                                        <span class="card-title">{{ flight.pax_outbound }}</span>
-                                        
-                                        <label for="id">Gate</label>
-                                        <span class="card-title">{{ flight.gate }}</span>
-                                        
-                                        <p><em>by: {{ flight.created_by }}</em></p> 
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
+                    <div class="input-field col s6">
+                        <input id="stand" class="validate invalidate" name="stand" minlength="2" maxlength="25" type="text" value="{{ flight.stand }}" required>
+                        <label for="stand">Stand</label>    
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="comments" class="validate invalidate" name="comments" minlength="2" maxlength="25" type="text" value="{{ flight.comments }}" required>
+                        <label for="comments">Comments</label>    
                     </div>
                 </div>
-            </div>     
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="flight_inbound" class="validate invalidate" name="flight_inbound" minlength="2" maxlength="25" type="text" value="{{ flight.flight_inbound }}" required>
+                        <label for="flight.flight_inbound">Flight_inbound</label>    
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="from" class="validate invalidate" name="from" minlength="2" maxlength="25" type="text" value="{{ flight.from }}" required>
+                        <label for="comments">From</label>    
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="text-field col s6">
+                        <input id="registration" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.registration }}" required>
+                        <label for="registration">Registration</label>    
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="aircraft" class="validate invalidate" name="aircraft" minlength="2" maxlength="25" type="text" value="{{ flight.aircraft }}" required>
+                        <label for="aircraft">Aircraft</label>    
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="sta" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.sta }}" required>
+                        <label for="sta">STA</label>    
+                    </div>
+                    <div class="input-field col s6"> 
+                        <input for="pax-inbound" class="validate invalidate" name="aircraft" minlength="2" maxlength="25" type="text" value="{{ flight.pax_inbound }}" required>
+                        <label for="pax_inbound">Pax Inbound</label>                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="arrival" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.arrival }}" required>
+                        <label for="arrival">Aarrival</label>    
+                    </div>
+                    <div class="input-field col s6"> 
+                        <input for="flight_outbound" class="validate invalidate" name="flight_outbound" minlength="2" maxlength="25" type="text" value="{{ flight.flight_outbound }}" required>
+                        <label for="flight_outbound">Flight Outbound</label>                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="to" class="validate invalidate" name="to" minlength="2" maxlength="25" type="text" value="{{ flight.to }}" required>
+                        <label for="to">To</label>    
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="registration" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.registration }}" required>
+                        <label for="registration">Registration</label>    
+                    </div>
+                </div>  
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="aircraft" class="validate invalidate" name="aircraft" minlength="2" maxlength="25" type="text" value="{{ flight.aircraft }}" required>
+                        <label for="aircraft">Aircraft</label>    
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="std" class="validate invalidate" name="std" minlength="2" maxlength="25" type="text" value="{{ flight.std }}" required>
+                        <label for="std">STD</label>    
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="pax_outbound" class="validate invalidate" name="pax_outbound" minlength="2" maxlength="25" type="text" value="{{ flight.pax_outbound }}" required>
+                        <label for="pax_outbound">Pax Outbound</label>    
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="gate" class="validate invalidate" name="gate" minlength="2" maxlength="25" type="text" value="{{ flight.gate }}" required>
+                        <label for="gate">Gate</label>    
+                    </div>
+                </div>
+
+                <p><em>by: {{ flight.created_by }}</em></p> 
+
+            </div>
+
+
+
+
+
+
+
+
         </li>
         {% endfor %}
     </ul>
