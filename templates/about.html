@@ -6,13 +6,23 @@
             <div class="card-panel">
                 <h3 class="center-align custom-font-size">Welcome to Daily Flight Planner!</h3>
 
-                <p class="custom-font-size">Here's some information about our app:</p>
-                <p>Daily Flight Planner, an innovative application designed to digitise 
+                <p>Daily Flight Planner is an innovative application designed to digitise 
                     and streamline the daily dispatch planning process for airports.
                     Our platform offers a user-friendly interface that enhances efficiency 
                     and accuracy in managing flight operations.</p>
                 <ol class="custom-font-size">
-                    <li><strong>Log In or Register:</strong> Start by logging in to your account. If you don't have one, you'll need to register first.</li>
+                    <li><strong>Log In:</strong> There are two types of logins: AdminOps and Dispatcher, 
+                        each with access to different functionalities. 
+                        To access, you need a login created by Adminops.
+                        <ul><strong>AdminOps:</strong>It is a privileged access. It can access the profile 
+                            currently in use, access the home page, search the database, edit and delete flights. 
+                            It can access the about section. It has access to the dispatch section where it can modify 
+                            and delete dispatcher. It has access to the register section where it can create a new account. 
+                            It can access the new flight section where it can create a new flight.</ul>
+                        <ul><strong>Dispatcher:</strong>It can access the Profile page to view the currently logged-in profile. 
+                            It can access the Home page to consult the flights assigned to you. It also have access to the About page.</ul>
+                    </li>
+                    <li><strong>Register:</strong>Only AdminOps can register a new account.</li>
                     <li><strong>View Flights:</strong> On the home page, you can see all scheduled flights.</li>
                     <li><strong>Add a New Flight:</strong> If you're an admin, you can add new flights to the schedule.</li>
                     <li><strong>Edit or Delete Flights:</strong> Admins can also edit or delete existing flights as needed.</li>
