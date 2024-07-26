@@ -2,154 +2,153 @@
 {% block content %}
 
 <div class="gray-background">
-
     <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">All Daily Flights</h3>
 
-        <div class="row card-panel grey lighten-5">
-            <form action="{{ url_for('search') }}" method="post" class="col s12">
-                <div class="row valign-wrapper center-align">
-                    <div class="input-field col s12 m8">
-                        <i class="fas fa-search prefix pink-text text-darken-4"></i>
-                        <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                        <label for="query">Search</label>
-                    </div>
-                    <div class="col s12 m4">
-                        <a href="{{ url_for('get_flights') }}" class="red btn-small text-shadow">Reset</a>
-                        <button type="submit" class="btn-small pink darken-1 text-shadow">
-                            <i class="fas fa-search"></i> 
-                        </button>
-                    </div>
+    <div class="row card-panel grey lighten-5">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix pink-text text-darken-4"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search</label>
                 </div>
-            </form>
-        </div>
-
-        
-        <div class="container white">
-        {% if flights|length > 0 %}
-        <ul class="collapsible">
-            {% for flight in flights %}
-            <li>
-                <div class="collapsible-header white-text pink darken-4 text-shadow">
-                    <div class="col s3">
-                        <i class="fas fa-angle-down"></i>
-                        {% if session.user|lower == flight.created_by|lower %}
-                        <div class="button-container">
-                            <a href="{{ url_for('dispatched_flight', flight_id=flight._id) }}" class="btn-small green accent-4" onclick="return confirm('Are you sure you want dispatch this flight?');">Dispatched</a>
-                            <a href="{{ url_for('edit_flight', flight_id=flight._id) }}" class="btn-small light-blue accent-4" onclick="return confirm('Are you sure you want edit this flight?');">Edit</a>
-                        </div>
-                        {% endif %}
-                    </div>
-                    
-                    <div class="col s9">
-                        <strong>{{ flight.dispatch_name }}</strong> : {{ flight.date }}
-                        {% if flight.special_assistance == "on" %}
-                            <i class="fas fa-exclamation-circle white-text text-lighten-2 tooltipped"
-                            data-position="right" data-tooltip="Special Assistance!"></i>
-                        {% endif %}
-                    </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_flights') }}" class="red btn-small text-shadow">Reset</a>
+                    <button type="submit" class="btn-small pink darken-1 text-shadow">
+                        <i class="fas fa-search"></i> 
+                    </button>
                 </div>
-                
-                <div class="collapsible-body">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="fas fa-thin fa-parking prefix text-darken-4" style="color: #e91e63;"></i>
-                            <input id="stand" class="validate invalidate" name="stand" minlength="2" maxlength="25" type="text" value="{{ flight.stand }}" required>
-                            <label for="stand">Stand</label>    
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="comments" class="validate invalidate" name="comments" minlength="2" maxlength="25" type="text" value="{{ flight.comments }}" required>
-                            <label for="comments">Comments</label>    
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="flight_inbound" class="validate invalidate" name="flight_inbound" minlength="2" maxlength="25" type="text" value="{{ flight.flight_inbound }}" required>
-                            <label for="flight_inbound">Flight_inbound</label>    
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="from" class="validate invalidate" name="from" minlength="2" maxlength="25" type="text" value="{{ flight.from }}" required>
-                            <label for="comments">From</label>    
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="registration" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.registration }}" required>
-                            <label for="registration">Registration</label>    
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="aircraft" class="validate invalidate" name="aircraft" minlength="2" maxlength="25" type="text" value="{{ flight.aircraft }}" required>
-                            <label for="aircraft">Aircraft</label>    
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="sta" class="validate invalidate" name="sta" minlength="2" maxlength="25" type="text" value="{{ flight.sta }}" required>
-                            <label for="sta">STA</label>    
-                        </div>
-                        <div class="input-field col s6"> 
-                            <input id="pax-inbound" class="validate invalidate" name="pax_inbound" minlength="2" maxlength="25" type="text" value="{{ flight.pax_inbound }}" required>
-                            <label for="pax_inbound">Pax Inbound</label>                        
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="arrival" class="validate invalidate" name="arrival" minlength="2" maxlength="25" type="text" value="{{ flight.arrival }}" required>
-                            <label for="arrival">Aarrival</label>    
-                        </div>
-                        <div class="input-field col s6"> 
-                            <input id="flight_outbound" class="validate invalidate" name="flight_outbound" minlength="2" maxlength="25" type="text" value="{{ flight.flight_outbound }}" required>
-                            <label for="flight_outbound">Flight Outbound</label>                        
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="to" class="validate invalidate" name="to" minlength="2" maxlength="25" type="text" value="{{ flight.to }}" required>
-                            <label for="to">To</label>    
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="registration" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.registration }}" required>
-                            <label for="registration">Registration</label>    
-                        </div>
-                    </div>  
-
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="aircraft-2" class="validate invalidate" name="aircraft-2" minlength="2" maxlength="25" type="text" value="{{ flight.aircraft }}" required>
-                            <label for="aircraft-2">Aircraft</label>    
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="std" class="validate invalidate" name="std" minlength="2" maxlength="25" type="text" value="{{ flight.std }}" required>
-                            <label for="std">STD</label>    
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="pax_outbound" class="validate invalidate" name="pax_outbound" minlength="2" maxlength="25" type="text" value="{{ flight.pax_outbound }}" required>
-                            <label for="pax_outbound">Pax Outbound</label>    
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="gate" class="validate invalidate" name="gate" minlength="2" maxlength="25" type="text" value="{{ flight.gate }}" required>
-                            <label for="gate">Gate</label>    
-                        </div>
-                    </div>
-
-                    <p><em>by: {{ flight.created_by }}</em></p> 
-
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
+            </div>
+        </form>
     </div>
 
+    <div class="container white">
+        {% if flights|length > 0 %}
+            <ul class="collapsible">
+                {% for flight in flights %}
+                <li>
+                    <div class="collapsible-header white-text pink darken-4 text-shadow">
+                        <div class="col s3">
+                            <i class="fas fa-angle-down"></i>
+                            {% if session.user|lower == flight.created_by|lower %}
+                            <div class="button-container">
+                                <a href="{{ url_for('dispatched_flight', flight_id=flight._id) }}" class="btn-small green accent-4" onclick="return confirm('Are you sure you want dispatch this flight?');">Dispatched</a>
+                                <a href="{{ url_for('edit_flight', flight_id=flight._id) }}" class="btn-small light-blue accent-4" onclick="return confirm('Are you sure you want edit this flight?');">Edit</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col s9">
+                            <strong>{{ flight.dispatch_name }}</strong> : {{ flight.date }}
+                            {% if flight.special_assistance == "on" %}
+                                <i class="fas fa-exclamation-circle white-text text-lighten-2 tooltipped"
+                                data-position="right" data-tooltip="Special Assistance!"></i>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-body">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="fas fa-thin fa-parking prefix text-darken-4" style="color: #e91e63;"></i>
+                                <input id="stand" class="validate invalidate" name="stand" minlength="2" maxlength="25" type="text" value="{{ flight.stand }}" required>
+                                <label for="stand">Stand</label>    
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="comments" class="validate invalidate" name="comments" minlength="2" maxlength="25" type="text" value="{{ flight.comments }}" required>
+                                <label for="comments">Comments</label>    
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="flight_inbound" class="validate invalidate" name="flight_inbound" minlength="2" maxlength="25" type="text" value="{{ flight.flight_inbound }}" required>
+                                <label for="flight_inbound">Flight_inbound</label>    
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="from" class="validate invalidate" name="from" minlength="2" maxlength="25" type="text" value="{{ flight.from }}" required>
+                                <label for="comments">From</label>    
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="registration" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.registration }}" required>
+                                <label for="registration">Registration</label>    
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="aircraft" class="validate invalidate" name="aircraft" minlength="2" maxlength="25" type="text" value="{{ flight.aircraft }}" required>
+                                <label for="aircraft">Aircraft</label>    
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="sta" class="validate invalidate" name="sta" minlength="2" maxlength="25" type="text" value="{{ flight.sta }}" required>
+                                <label for="sta">STA</label>    
+                            </div>
+                            <div class="input-field col s6"> 
+                                <input id="pax-inbound" class="validate invalidate" name="pax_inbound" minlength="2" maxlength="25" type="text" value="{{ flight.pax_inbound }}" required>
+                                <label for="pax_inbound">Pax Inbound</label>                        
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="arrival" class="validate invalidate" name="arrival" minlength="2" maxlength="25" type="text" value="{{ flight.arrival }}" required>
+                                <label for="arrival">Arrival</label>    
+                            </div>
+                            <div class="input-field col s6"> 
+                                <input id="flight_outbound" class="validate invalidate" name="flight_outbound" minlength="2" maxlength="25" type="text" value="{{ flight.flight_outbound }}" required>
+                                <label for="flight_outbound">Flight Outbound</label>                        
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="to" class="validate invalidate" name="to" minlength="2" maxlength="25" type="text" value="{{ flight.to }}" required>
+                                <label for="to">To</label>    
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="registration" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.registration }}" required>
+                                <label for="registration">Registration</label>    
+                            </div>
+                        </div>  
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="aircraft-2" class="validate invalidate" name="aircraft-2" minlength="2" maxlength="25" type="text" value="{{ flight.aircraft }}" required>
+                                <label for="aircraft-2">Aircraft</label>    
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="std" class="validate invalidate" name="std" minlength="2" maxlength="25" type="text" value="{{ flight.std }}" required>
+                                <label for="std">STD</label>    
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="pax_outbound" class="validate invalidate" name="pax_outbound" minlength="2" maxlength="25" type="text" value="{{ flight.pax_outbound }}" required>
+                                <label for="pax_outbound">Pax Outbound</label>    
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="gate" class="validate invalidate" name="gate" minlength="2" maxlength="25" type="text" value="{{ flight.gate }}" required>
+                                <label for="gate">Gate</label>    
+                            </div>
+                        </div>
+
+                        <p><em>by: {{ flight.created_by }}</em></p> 
+
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     {% else %}
         <h3 class="black-text text-darken-4 center-align">Sorry, No Results Found</h3>
     {% endif %}
-    
+</div>
+
 {% endblock %}
+
 
