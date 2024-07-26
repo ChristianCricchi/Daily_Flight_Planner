@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="gray-background">
     <div class="row white">
         <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">Add Flight</h3>
         <form class="col s12" method="POST" action="{{ url_for('add_flight') }}">
@@ -179,5 +180,5 @@
             </div>
         </form>
     </div>
-
+</div>
 {% endblock %}
