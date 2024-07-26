@@ -69,7 +69,8 @@ def login():
         if existing_user:
             # Ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                existing_user["password"], 
+            request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome {}".format(
                         request.form.get("username")))
@@ -140,7 +141,8 @@ def add_flight():
 @app.route("/edit_flight/<flight_id>", methods=["GET", "POST"])
 def edit_flight(flight_id):
     if request.method == "POST":
-        special_assistance = "on" if request.form.get("special_assistance") else "off"
+        special_assistance = "on" if request.form.get(
+            "special_assistance") else "off"
         submit = {
             "dispatch_name": request.form.get("dispatch_name"),
             "stand": request.form.get("stand"),
@@ -161,11 +163,13 @@ def edit_flight(flight_id):
             "gate": request.form.get("gate"),
             "created_by": session["user"]
         }
-        mongo.db.flights.update_one({"_id": ObjectId(flight_id)}, {"$set": submit})
+        mongo.db.flights.update_one({"_id": ObjectId(flight_id)}, {
+            "$set": submit})
         flash("Flight Successfully Updated")
     flight = mongo.db.flights.find_one({"_id": ObjectId(flight_id)})
     dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
-    return render_template("edit_flight.html", flight=flight, dispatcher=dispatcher)
+    return render_template(
+        "edit_flight.html", flight=flight, dispatcher=dispatcher)
 
 
 @app.route("/dispatched_flight/<flight_id>")
@@ -183,7 +187,7 @@ def get_dispatch():
 
 @app.route("/add_dispatch", methods=["GET", "POST"])
 def add_dispatch():
-     if request.method == "POST":
+    if request.method == "POST":
         dispatch = {
             "dispatch_name": request.form.get("dispatch_name"),
             "id": request.form.get("id"),
@@ -191,7 +195,7 @@ def add_dispatch():
         mongo.db.dispatcher.insert_one(dispatch)
         flash("New Dispatcher Added")
         return redirect(url_for("get_dispatch"))
-     return render_template("add_dispatch.html")
+    return render_template("add_dispatch.html")
 
 
 @app.route("/edit_dispatch/<dispatch_id>", methods=["GET", "POST"])
@@ -201,7 +205,8 @@ def edit_dispatch(dispatch_id):
             "dispatch_name": request.form.get("dispatch_name"),
             "id": request.form.get("id"),
         } 
-        mongo.db.dispatcher.update_one({"_id": ObjectId(dispatch_id)}, {"$set": submit})
+        mongo.db.dispatcher.update_one({"_id": ObjectId(dispatch_id)}, {
+            "$set": submit})
         flash("Dispatcher Successfully Updated")
         return redirect(url_for("get_dispatch"))
     dispatch = mongo.db.dispatcher.find_one({"_id": ObjectId(dispatch_id)})
@@ -246,7 +251,8 @@ def edit_report(report_id):
             'dispatcher_name': request.form.get('dispatcher_name'),
             'report_content': request.form.get('report_content')
         }
-        mongo.db.report.update_one({'_id': ObjectId(report_id)}, {'$set': updated_report})
+        mongo.db.report.update_one({'_id': ObjectId(report_id)}, {
+            '$set': updated_report})
         return redirect(url_for('report'))
     report = mongo.db.report.find_one({'_id': ObjectId(report_id)})
     return render_template('edit_report.html', report=report)
