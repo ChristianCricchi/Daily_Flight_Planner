@@ -229,7 +229,45 @@ def delete_dispatch(dispatch_id):
 def about():
     return render_template("about.html")
 
+
+@app.route('/report')
+def report():
+    reports = mongo.db.report.find()
+    return render_template('report.html', reports=reports)
+
+
+@app.route('/add_report', methods=['POST'])
+def add_report():
+    if request.method == 'POST':
+        new_report = {
+            'flight_number': request.form.get('flight_number'),
+            'dispatcher_name': request.form.get('dispatcher_name'),
+            'report_content': request.form.get('report_content')
+        }
+        mongo.db.report.insert_one(new_report)
+        return redirect(url_for('report'))
+
+@app.route('/edit_report/<report_id>', methods=['GET', 'POST'])
+def edit_report(report_id):
+    if request.method == 'POST':
+        updated_report = {
+            'flight_number': request.form.get('flight_number'),
+            'dispatcher_name': request.form.get('dispatcher_name'),
+            'report_content': request.form.get('report_content')
+        }
+        mongo.db.report.update_one({'_id': ObjectId(report_id)}, {'$set': updated_report})
+        return redirect(url_for('report'))
     
+    report = mongo.db.report.find_one({'_id': ObjectId(report_id)})
+    return render_template('edit_report.html', report=report)
+
+
+@app.route('/delete_report/<report_id>')
+def delete_report(report_id):
+    mongo.db.report.delete_one({'_id': ObjectId(report_id)})
+    return redirect(url_for('report'))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

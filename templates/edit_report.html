@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Modifica Report</h2>
+    
+    <form method="POST" action="{{ url_for('edit_report', report_id=report._id) }}" id="update-report-form">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="flight_number" name="flight_number" type="text" class="validate" value="{{ report.flight_number }}" required>
+                <label for="flight_number">Flight Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="dispatcher_name" name="dispatcher_name" type="text" class="validate" value="{{ report.dispatcher_name }}" required>
+                <label for="dispatcher_name">Dispatch Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="report_content" name="report_content" class="materialize-textarea" required>{{ report.report_content }}</textarea>
+                <label for="report_content">Report Content</label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn-small waves-effect waves-light" type="button" id="update-report-btn">Aggiorna Report
+                <i class="fas fa-edit right"></i>
+            </button>
+            <a href="{{ url_for('report', report_id=report._id) }}" class="btn-small waves-effect waves-light red">Annulla
+                <i class="fas fa-times right"></i>
+            </a>
+        </div>
+    </form>
+
+    <!-- Modal Structure -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h4>Conferma</h4>
+            <p>Sei sicuro di voler procedere?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Annulla</a>
+            <a href="#!" id="confirm-action" class="waves-effect waves-red btn-flat">Conferma</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function(){
+            $('.collapsible').collapsible();
+            $('.modal').modal();
+
+            $('#update-report-btn').click(function(event) {
+                event.preventDefault();
+                $('#confirm-action').attr('href', '#');
+                $('#confirm-modal').modal('open');
+            });
+
+            $('#confirm-action').click(function() {
+                $('#update-report-form').submit();
+            });
+        });
+    </script>
+{% endblock %}

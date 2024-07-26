@@ -15,6 +15,23 @@ $(document).ready(function () {
             done: "select"
         }
     });
+
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+        $('.modal').modal();
+        
+        $('.confirm-btn').click(function(event) {
+            event.preventDefault();
+            var actionUrl = $(this).attr('href');
+            $('#confirm-action').attr('href', actionUrl);
+            $('#confirm-modal').modal('open');
+        });
+    });
+ 
+
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+    });
   
     validateMaterializeSelect();
     function validateMaterializeSelect() {
