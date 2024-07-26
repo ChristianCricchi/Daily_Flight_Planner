@@ -32,6 +32,21 @@ $(document).ready(function () {
     $(document).ready(function(){
         $('.collapsible').collapsible();
     });
+
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+        $('.modal').modal();
+
+        $('#update-report-btn').click(function(event) {
+            event.preventDefault();
+            $('#confirm-action').attr('href', '#');
+            $('#confirm-modal').modal('open');
+        });
+
+        $('#confirm-action').click(function() {
+            $('#update-report-form').submit();
+        });
+    });
   
     validateMaterializeSelect();
     function validateMaterializeSelect() {
@@ -46,6 +61,7 @@ $(document).ready(function () {
                     $(this).children("input").css(classValid);
                 }
             });
+
         }).on("click", function () {
             if ($(this).parent(".select-wrapper").children("ul").children("li.selected:not(.disabled)").css("background-color") === "rgba(0, 0, 0, 0.03)") {
                 $(this).parent(".select-wrapper").children("input").css(classValid);

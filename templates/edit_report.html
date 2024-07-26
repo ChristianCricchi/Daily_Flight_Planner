@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>Modifica Report</h2>
+<div class="gray-background">
+
+    <h2>Edit Report</h2>
     
     <form method="POST" action="{{ url_for('edit_report', report_id=report._id) }}" id="update-report-form">
         <div class="row">
@@ -22,10 +24,10 @@
             </div>
         </div>
         <div class="row">
-            <button class="btn-small waves-effect waves-light" type="button" id="update-report-btn">Aggiorna Report
+            <button class="btn-small pink waves-effect waves-light" type="button" id="update-report-btn">Edit Report
                 <i class="fas fa-edit right"></i>
             </button>
-            <a href="{{ url_for('report', report_id=report._id) }}" class="btn-small waves-effect waves-light red">Annulla
+            <a href="{{ url_for('report', report_id=report._id) }}" class="btn-small waves-effect waves-light red">Cancel
                 <i class="fas fa-times right"></i>
             </a>
         </div>
@@ -34,31 +36,14 @@
     <!-- Modal Structure -->
     <div id="confirm-modal" class="modal">
         <div class="modal-content">
-            <h4>Conferma</h4>
-            <p>Sei sicuro di voler procedere?</p>
+            <h4>Confirm</h4>
+            <p>Are you sure you want edit this report?</p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Annulla</a>
-            <a href="#!" id="confirm-action" class="waves-effect waves-red btn-flat">Conferma</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="#!" id="confirm-action" class="waves-effect waves-red btn-flat">Edit</a>
         </div>
     </div>
+</div>
 {% endblock %}
 
-{% block scripts %}
-    <script>
-        $(document).ready(function(){
-            $('.collapsible').collapsible();
-            $('.modal').modal();
-
-            $('#update-report-btn').click(function(event) {
-                event.preventDefault();
-                $('#confirm-action').attr('href', '#');
-                $('#confirm-modal').modal('open');
-            });
-
-            $('#confirm-action').click(function() {
-                $('#update-report-form').submit();
-            });
-        });
-    </script>
-{% endblock %}

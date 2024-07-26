@@ -27,6 +27,13 @@ h3 {
     color: #ad1457;
 }
 
+h2 {
+    font-weight: 300;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    color: #ad1457;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px #ad1457;
 }
@@ -78,6 +85,19 @@ h3 {
 .brand-text {
     font-size: 0.9rem; /* Adjust this value as needed */
 }
+
+.navigation-bar {
+    background-color: #333; /* Colore di sfondo della barra di navigazione */
+    padding: 50px 20px; /* Padding per la barra di navigazione */
+  }
+  
+  .gray-background {
+    background-color: #f0f0f0; /* Colore grigio chiaro */
+    padding: 20px; /* Aggiungi padding per un po' di spazio interno */
+    border-radius: 5px; /* Aggiungi angoli arrotondati se desiderato */
+    margin-top: 20px; /* Margine superiore per staccare dal menu di navigazione */
+  }
+
 
 /* Mobile-first approach */
 @media (min-width: 600px) {
