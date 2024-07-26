@@ -51,14 +51,12 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")) 
-        }  
+        }
         mongo.db.users.insert_one(register)  
-
         # Store the authenticated user's data in a session cookie
         session["user"] = request.form.get("username").lower()
         flash("User account created!") 
         return redirect(url_for("profile", username=session["user"])) 
-
     return render_template("register.html")
 
 
@@ -68,7 +66,6 @@ def login():
         # Check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
         if existing_user:
             # Ensure hashed password matches user input
             if check_password_hash(
@@ -87,7 +84,6 @@ def login():
             # Username doesn't exist
             flash("Incorrect Username and/or Password, please try again!")
             return redirect(url_for("login"))
-
     return render_template("login.html")
 
 
@@ -96,10 +92,8 @@ def profile(username):
     # Grab the session user's username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
     if session["user"]:    
         return render_template("profile.html", username=username)
-
     return redirect(url_for("login"))  
 
 
@@ -139,14 +133,12 @@ def add_flight():
         mongo.db.flights.insert_one(flight)
         flash("Flight Successfully Added")
         return redirect(url_for("get_flights"))
-
     dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
     return render_template("add_flight.html", dispatcher=dispatcher)
 
 
 @app.route("/edit_flight/<flight_id>", methods=["GET", "POST"])
 def edit_flight(flight_id):
-
     if request.method == "POST":
         special_assistance = "on" if request.form.get("special_assistance") else "off"
         submit = {
@@ -171,7 +163,6 @@ def edit_flight(flight_id):
         }
         mongo.db.flights.update_one({"_id": ObjectId(flight_id)}, {"$set": submit})
         flash("Flight Successfully Updated")
-
     flight = mongo.db.flights.find_one({"_id": ObjectId(flight_id)})
     dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
     return render_template("edit_flight.html", flight=flight, dispatcher=dispatcher)
@@ -200,7 +191,6 @@ def add_dispatch():
         mongo.db.dispatcher.insert_one(dispatch)
         flash("New Dispatcher Added")
         return redirect(url_for("get_dispatch"))
-
      return render_template("add_dispatch.html")
 
 
@@ -214,7 +204,6 @@ def edit_dispatch(dispatch_id):
         mongo.db.dispatcher.update_one({"_id": ObjectId(dispatch_id)}, {"$set": submit})
         flash("Dispatcher Successfully Updated")
         return redirect(url_for("get_dispatch"))
-
     dispatch = mongo.db.dispatcher.find_one({"_id": ObjectId(dispatch_id)})
     return render_template("edit_dispatch.html", dispatch=dispatch)
 
@@ -247,7 +236,7 @@ def add_report():
         }
         mongo.db.report.insert_one(new_report)
         return redirect(url_for('report'))
-        
+
 
 @app.route('/edit_report/<report_id>', methods=['GET', 'POST'])
 def edit_report(report_id):
@@ -259,7 +248,6 @@ def edit_report(report_id):
         }
         mongo.db.report.update_one({'_id': ObjectId(report_id)}, {'$set': updated_report})
         return redirect(url_for('report'))
-    
     report = mongo.db.report.find_one({'_id': ObjectId(report_id)})
     return render_template('edit_report.html', report=report)
 
