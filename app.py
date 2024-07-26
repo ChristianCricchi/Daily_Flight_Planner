@@ -114,7 +114,8 @@ def logout():
 @app.route("/add_flight", methods=["GET", "POST"])
 def add_flight():
     if request.method == "POST":
-        special_assistance = "on" if request.form.get("special_assistance") else "off"
+        special_assistance = "on" if request.form.get(
+            "special_assistance") else "off"
         flight = {
             "dispatch_name": request.form.get("dispatch_name"),
             "stand": request.form.get("stand"),
@@ -246,6 +247,7 @@ def add_report():
         }
         mongo.db.report.insert_one(new_report)
         return redirect(url_for('report'))
+        
 
 @app.route('/edit_report/<report_id>', methods=['GET', 'POST'])
 def edit_report(report_id):
