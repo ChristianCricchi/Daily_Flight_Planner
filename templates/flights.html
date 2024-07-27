@@ -59,7 +59,7 @@
                                 <input type="checkbox" id="special_assistance" name="special_assistance">
                             {% endif %}
                             <span class="lever"></span>
-                            Special Assistance
+                            Specials
                         </label>
                     </div>    
                 </div>
@@ -79,7 +79,7 @@
                     <i class="fas fa-thin fa-plane prefix text-darken-4" style="color: #e91e63;"></i>
                     <textarea id="aircraft" name="aircraft" minlength="2"
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.aircraft -}}</textarea>
-                    <label for="aircraft">Type of Aircraft</label>
+                    <label for="aircraft">Aircraft</label>
                 </div>
 
                 <!-- registration section -->
@@ -106,7 +106,7 @@
                     <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
                     <textarea id="flight_inbound" name="flight_inbound" minlength="2"
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.flight_inbound -}}</textarea>
-                    <label for="flight_inbound">Flight Inbound</label>
+                    <label for="flight_inbound">Flight In</label>
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
                     <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
                     <textarea id="pax_inbound" name="pax_inbound" minlength="2"
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.pax_inbound -}}</textarea>
-                    <label for="pax_inbound">Passengers Inbound</label>
+                    <label for="pax_inbound">Pax In</label>
                 </div>
             </div>
 
@@ -142,7 +142,7 @@
                     <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
                     <textarea id="flight_outbound" name="flight_outbound" minlength="2"
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.flight_outbound -}}</textarea>
-                    <label for="flight_outbound">Flight Outbound</label>
+                    <label for="flight_outbound">Flight Out</label>
                 </div>
             </div>
 
@@ -170,7 +170,7 @@
                     <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
                     <textarea id="pax_outbound" name="pax_outbound" minlength="2"
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.pax_outbound -}}</textarea>
-                    <label for="pax_outbound">Passengers Outbound</label>
+                    <label for="pax_outbound">Pax Out</label>
                 </div>
 
                 <!-- gate section -->
