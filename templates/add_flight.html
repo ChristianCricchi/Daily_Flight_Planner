@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- This div sets the background color -->
 <div class="gray-background">
+    <!-- This div creates a row with a white background color -->
     <div class="row white">
-        <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">Add Flight</h3>
+        <!-- This h3 tag styles the heading -->
+        <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">
+            
+            Add Flight
+        </h3>
+        <!-- This form uses the POST method to submit data to the 'add_flight' endpoint. Some style -->
         <form class="col s12" method="POST" action="{{ url_for('add_flight') }}">
+            
             <!-- dispatcher name -->
             <div class="row">
                 <div class="input-field col s12">
@@ -13,10 +21,10 @@
                         <option value="" disabled selected>Choose Dispatcher</option>
                         {% for dispatch in dispatcher %}
                             <option value="{{ dispatch.dispatch_name }}">{{ dispatch.dispatch_name }}</option>
-                        {% endfor %}    
+                        {% endfor %}
                     </select>
                     <label for="dispatch_name">Dispatcher</label>
-                  </div>
+                </div>
             </div>
 
             <!-- stand section -->

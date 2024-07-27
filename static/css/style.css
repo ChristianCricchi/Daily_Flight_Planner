@@ -1,6 +1,7 @@
 /* Import Google font */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
+/* Global styles */
 body {
     background: url("../images/background.jpg") no-repeat fixed center center/cover;
     font-family: 'Oswald', sans-serif;
@@ -11,6 +12,7 @@ body {
     padding-top: 3.125rem; /* 50px to rem */
 }
 
+/* Header styles */
 .fixed-header {
     position: fixed;
     top: 0;
@@ -20,14 +22,8 @@ body {
     transition: background-color 0.3s; /* Optional: for a smooth background change */
 }
 
-h3 {
-    font-weight: 300;
-    margin-top: 0.1rem;
-    margin-bottom: 1rem;
-    color: #ad1457;
-}
-
-h2 {
+/* Typography styles */
+h2, h3 {
     font-weight: 300;
     margin-top: 0.1rem;
     margin-bottom: 1rem;
@@ -38,6 +34,7 @@ h2 {
     text-shadow: 2px 2px 2px #ad1457;
 }
 
+/* Navigation styles */
 .sidenav {
     background-color: #ad1457;
 }
@@ -48,6 +45,12 @@ h2 {
     text-shadow: 2px 2px 2px #ad1457;
 }
 
+.custom-navbar,
+.custom-navbar ul a {
+    font-size: 1rem;
+}
+
+/* Form and layout styles */
 .form-spacing {
     margin-top: 3.125rem; /* 50px to rem */
 }
@@ -56,11 +59,6 @@ h2 {
     line-height: 2;
     color: white;
     text-shadow: 2px 2px 2px #ad1457;
-}
-
-.custom-navbar,
-.custom-navbar ul a {
-    font-size: 1rem;
 }
 
 .fas.fa-exclamation-circle {
@@ -86,26 +84,24 @@ h2 {
     font-size: 0.9rem; /* Adjust this value as needed */
 }
 
+/* Navigation bar and background styles */
 .navigation-bar {
-    background-color: #333; /* Colore di sfondo della barra di navigazione */
-    padding: 50px 20px; /* Padding per la barra di navigazione */
-  }
-  
-  .gray-background {
-    background-color: #f0f0f0; /* Colore grigio chiaro */
-    padding: 20px; /* Aggiungi padding per un po' di spazio interno */
-    border-radius: 5px; /* Aggiungi angoli arrotondati se desiderato */
-    margin-top: 20px; /* Margine superiore per staccare dal menu di navigazione */
-  }
+    background-color: #333; /* Background color for the navigation bar */
+    padding: 50px 20px; /* Padding for the navigation bar */
+}
 
+.gray-background {
+    background-color: #f0f0f0; /* Light gray color */
+    padding: 20px; /* Add padding for internal spacing */
+    border-radius: 5px; /* Add rounded corners if desired */
+    margin-top: 20px; /* Top margin to separate from navigation menu */
+}
 
+/* Responsive styles */
 /* Mobile-first approach */
 @media (min-width: 600px) {
     .custom-navbar,
-    .custom-navbar ul a {
-        font-size: 1.3rem;
-    }
-
+    .custom-navbar ul a,
     .sidenav li a {
         font-size: 1.3rem;
     }
@@ -113,10 +109,7 @@ h2 {
 
 @media (min-width: 1024px) {
     .custom-navbar,
-    .custom-navbar ul a {
-        font-size: 1.3rem;
-    }
-
+    .custom-navbar ul a,
     .sidenav li a {
         font-size: 1.3rem;
     }
@@ -128,22 +121,19 @@ h2 {
 
 @media screen and (max-width: 768px) {
     body {
-      font-size: 14px;
+        font-size: 14px;
     }
-  }
-  
-  @media screen and (min-width: 769px) {
+}
+
+@media screen and (min-width: 769px) {
     body {
-      font-size: 14px;
+        font-size: 14px;
     }
-  }
+}
 
 @media (max-width: 600px) {
     .custom-margin-top {
-        margin-top: 30px; /* Margine più piccolo per schermi piccoli */
+        margin-top: 30px; /* Smaller margin for small screens */
     }
 }
-  
-
-
 

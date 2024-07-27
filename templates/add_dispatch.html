@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="gray-background">
-    <h2 class="pink white-text center-align">Add Dispatch</h3>
+    <!-- Page header -->
+    <h2 class="pink white-text center-align">Add Dispatch</h2>
 
+    <!-- Card panel for the form -->
     <div class="row card-panel grey lighten-5">
+        <!-- Form for adding dispatch -->
         <form class="col s12" method="POST" action="{{ url_for('add_dispatch') }}">
-            <!-- dispatch name -->
+            <!-- Dispatch name input field -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix pink-text text-darken-4"></i>
@@ -15,6 +18,7 @@
                 </div>
             </div>
 
+            <!-- Dispatch ID input field -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix pink-text text-darken-4"></i>
@@ -24,9 +28,7 @@
                 </div>
             </div>
 
-            
-         
-            <!-- submit button -->
+            <!-- Submit button -->
             <div class="row">
                 <div class="col s12 center-align">   
                     <button type="submit" class="btn-small pink darken-1 text-shadow">
