@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="gray-background"></div>
-        <h2 class="pink white-text center-align">Edit Dispatch</h3>
+    <div class="gray-background">
+        <!-- Header for the Edit Dispatch section -->
+        <h2 class="pink white-text center-align">Edit Dispatch</h2>
 
+        <!-- Form to edit dispatch details -->
         <div class="row card-panel grey lighten-5">
             <form class="col s12" method="POST" action="{{ url_for('edit_dispatch', dispatch_id=dispatch._id) }}">
-                <!-- dispatch name -->
+                <!-- Dispatch Name -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-folder-open prefix pink-text text-darken-4"></i>
@@ -15,6 +17,7 @@
                     </div>
                 </div>
 
+                <!-- Dispatch ID -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-folder-open prefix pink-text text-darken-4"></i>
@@ -24,14 +27,12 @@
                     </div>
                 </div>
 
-                
-            
-                <!-- submit button -->
+                <!-- Submit and Cancel buttons -->
                 <div class="row">
                     <div class="col s12 center-align">
                         <a href="{{ url_for('get_dispatch') }}" class="btn-small red text-shadow">
                             Cancel <i class="fas fa-times-circle right"></i>
-                        </a>   
+                        </a>
                         <button type="submit" class="btn-small pink darken-1 text-shadow">
                             Edit Dispatch <i class="fas fa-edit right"></i>
                         </button>

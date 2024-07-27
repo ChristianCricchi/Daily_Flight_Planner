@@ -1,28 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="gray-background">
-
+    <!-- Header for the Edit Report section -->
     <h2>Edit Report</h2>
     
+    <!-- Form to edit report details -->
     <form method="POST" action="{{ url_for('edit_report', report_id=report._id) }}" id="update-report-form">
+        <!-- Flight Number input field -->
         <div class="row">
             <div class="input-field col s12">
                 <input id="flight_number" name="flight_number" type="text" class="validate" value="{{ report.flight_number }}" required>
                 <label for="flight_number">Flight Number</label>
             </div>
         </div>
+        <!-- Dispatcher Name input field -->
         <div class="row">
             <div class="input-field col s12">
                 <input id="dispatcher_name" name="dispatcher_name" type="text" class="validate" value="{{ report.dispatcher_name }}" required>
                 <label for="dispatcher_name">Dispatch Name</label>
             </div>
         </div>
+        <!-- Report Content textarea field -->
         <div class="row">
             <div class="input-field col s12">
                 <textarea id="report_content" name="report_content" class="materialize-textarea" required>{{ report.report_content }}</textarea>
                 <label for="report_content">Report Content</label>
             </div>
         </div>
+        <!-- Submit and Cancel buttons -->
         <div class="row">
             <button class="btn-small pink waves-effect waves-light" type="button" id="update-report-btn">Edit Report
                 <i class="fas fa-edit right"></i>
@@ -33,11 +38,11 @@
         </div>
     </form>
 
-    <!-- Modal Structure -->
+    <!-- Modal Structure for confirmation -->
     <div id="confirm-modal" class="modal">
         <div class="modal-content">
             <h4>Confirm</h4>
-            <p>Are you sure you want edit this report?</p>
+            <p>Are you sure you want to edit this report?</p>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
@@ -46,4 +51,3 @@
     </div>
 </div>
 {% endblock %}
-
