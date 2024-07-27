@@ -24,7 +24,7 @@
                 <ul class="right hide-on-med-and-down">
                     <!-- Check if user is logged in -->
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                       
                         <li><a href="{{ url_for('get_flights') }}">Home</a></li>
                         <li><a href="{{ url_for('about') }}">About</a></li>
                         <li><a href="{{ url_for('report') }}">Report</a></li>
@@ -47,7 +47,7 @@
             <li><h4 class="center-align white-text text-shadow pink darken-3">DFP</h4></li>
             <!-- Check if user is logged in -->
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                
                 <li><a href="{{ url_for('get_flights') }}">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('report') }}">Report</a></li>

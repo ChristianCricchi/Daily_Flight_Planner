@@ -1,185 +1,192 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="gray-background">
-    <!-- Header for the All Daily Flights section -->
-    <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">All Daily Flights</h3>
 
-    <!-- Search form for flights -->
-    <div class="row card-panel grey lighten-5">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <!-- Search input field and buttons -->
-            <div class="row valign-wrapper center-align">
-                <!-- Search input field -->
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix pink-text text-darken-4"></i>
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search</label>
+<h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">All Daily Flights</h3>
+
+<div class="container white">
+    <ul class="collapsible">
+        {% for flight in flights %}
+        <li>
+            <div class="collapsible-header white-text pink darken-4 text-shadow">
+                <div class="col s3">
+                    <i class="fas fa-angle-down"></i>
+                    {% if session.user|lower == flight.created_by|lower %}
+                    <div class="button-container">
+                        <a href="{{ url_for('dispatched_flight', flight_id=flight._id) }}" class="btn-small green accent-4 confirm-btn">Dispatched</a>
+                        <a href="{{ url_for('edit_flight', flight_id=flight._id) }}" class="btn-small light-blue accent-4 confirm-btn">Edit</a>
+                    </div>
+                    {% endif %}
                 </div>
-                <!-- Reset and Submit buttons -->
-                <div class="col s12 m4">
-                    <a href="{{ url_for('get_flights') }}" class="red btn-small text-shadow">Reset</a>
-                    <button type="submit" class="btn-small pink darken-1 text-shadow">
-                        <i class="fas fa-search"></i> 
-                    </button>
+                
+                <div class="col s9">
+                    <strong>{{ flight.dispatch_name }}</strong> : {{ flight.date }}
+                    {% if flight.special_assistance == "on" %}
+                        <i class="fas fa-exclamation-circle white-text text-lighten-2 tooltipped"
+                        data-position="right" data-tooltip="Special Assistance!"></i>
+                    {% endif %}
+                </div>
+
+            </div>
+            <div class="collapsible-body">
+                  <!-- stand section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-parking prefix text-darken-4" style="color: #e91e63;"></i>
+                    <input id="stand" name="stand" minlength="2" maxlength="20"
+                        value="{{ flight.stand }}" type="text" class="validate" required>
+                    <label for="stand">Stand</label>
+                </div>
+
+                <!-- comment section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-comments prefix prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="comments" name="comments" minlength="5"
+                        maxlength="250" class="materialize-textarea validate" required>{{- flight.comments -}}</textarea>
+                    <label for="comments">Comments</label>
                 </div>
             </div>
-        </form>
-    </div>
 
-    <div class="container white">
-        <!-- Check if there are any flights to display -->
-        {% if flights|length > 0 %}
-            <ul class="collapsible">
-                <!-- Loop through each flight -->
-                {% for flight in flights %}
-                <li>
-                    <!-- Collapsible header for each flight -->
-                    <div class="collapsible-header white-text pink darken-4 text-shadow">
-                        <div class="col s3">
-                            <i class="fas fa-angle-down"></i>
-                            <!-- Check if the current user created this flight -->
-                            {% if session.user|lower == flight.created_by|lower %}
-                            <div class="button-container">
-                                <!-- Dispatch button -->
-                                <a href="{{ url_for('dispatched_flight', flight_id=flight._id) }}" class="btn-small green accent-4 confirm-btn">Dispatched</a>
-                                <!-- Edit button -->
-                                <a href="{{ url_for('edit_flight', flight_id=flight._id) }}" class="btn-small light-blue accent-4 confirm-btn">Edit</a>
-                            </div>
-                            {% endif %}
-                        </div>
-                        
-                        <div class="col s9">
-                            <!-- Display flight information -->
-                            <strong>{{ flight.dispatch_name }}</strong> : {{ flight.date }}
-                            <!-- Check if special assistance is required -->
+            <!-- special assistance toggle -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <div class="switch">
+                        <i class="fas fa-exclamation-circle prefix text-darken-4" style="color: #e91e63;"></i>
+                        <label for="special_assistance">
                             {% if flight.special_assistance == "on" %}
-                                <i class="fas fa-exclamation-circle white-text text-lighten-2 tooltipped"
-                                data-position="right" data-tooltip="Special Assistance!"></i>
+                                <input type="checkbox" id="special_assistance" name="special_assistance" checked>
+                            {% else %}
+                                <input type="checkbox" id="special_assistance" name="special_assistance">
                             {% endif %}
-                        </div>
-                    </div>
-                    
-                    <div class="collapsible-body">
-                        <div class="row">
-                            <!-- Stand input field -->
-                            <div class="input-field col s6">
-                                <i class="fas fa-thin fa-parking prefix text-darken-4" style="color: #e91e63;"></i>
-                                <input id="stand" class="validate invalidate" name="stand" minlength="2" maxlength="25" type="text" value="{{ flight.stand }}" required>
-                                <label for="stand">Stand</label>    
-                            </div>
-                            <!-- Comments input field -->
-                            <div class="input-field col s6">
-                                <input id="comments" class="validate invalidate" name="comments" minlength="2" maxlength="25" type="text" value="{{ flight.comments }}" required>
-                                <label for="comments">Comments</label>    
-                            </div>
-                        </div>
+                            <span class="lever"></span>
+                            Special Assistance
+                        </label>
+                    </div>    
+                </div>
 
-                        <div class="row">
-                              <!-- Flight Inbound input field -->
-                            <div class="input-field col s6">
-                                <input id="flight_inbound" class="validate invalidate" name="flight_inbound" minlength="2" maxlength="25" type="text" value="{{ flight.flight_inbound }}" required>
-                                <label for="flight_inbound">Flight_inbound</label>    
-                            </div>
-                             <!-- From input field -->
-                            <div class="input-field col s6">
-                                <input id="from" class="validate invalidate" name="from" minlength="2" maxlength="25" type="text" value="{{ flight.from }}" required>
-                                <label for="comments">From</label>    
-                            </div>
-                        </div>
+                 <!-- date picker -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-calendar-plus prefix text-darken-4" style="color: #e91e63;"></i>
+                    <input id="date" name="date" type="text"
+                         value="{{ flight.date }}" class="datepicker validate" required>
+                    <label for="date">Date</label>
+                </div>
+            </div>
 
-                        <div class="row">
-                            <!-- Registration input field -->
-                            <div class="input-field col s6">
-                                <input id="registration" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.registration }}" required>
-                                <label for="registration">Registration</label>    
-                            </div>
+            <!-- type of aircraft section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="aircraft" name="aircraft" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.aircraft -}}</textarea>
+                    <label for="aircraft">Type of Aircraft</label>
+                </div>
 
-                            <div class="input-field col s6">
-                                 <!-- Aircraft input field -->
-                                <input id="aircraft" class="validate invalidate" name="aircraft" minlength="2" maxlength="25" type="text" value="{{ flight.aircraft }}" required>
-                                <label for="aircraft">Aircraft</label>    
-                            </div>
-                        </div>
+                <!-- registration section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane prefix text-darken-4" style="color: #e91e63;"></i>
+                    <textarea id="registration" name="registration" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.registration -}}</textarea>
+                    <label for="registration">Registration</label>
+                </div>
+            </div>
 
-                        <div class="row">
-                            <!-- STA (Scheduled Time of Arrival) input field -->
-                            <div class="input-field col s6">
-                                <input id="sta" class="validate invalidate" name="sta" minlength="2" maxlength="25" type="text" value="{{ flight.sta }}" required>
-                                <label for="sta">STA</label>    
-                            </div>
+            <!-- from section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-map-marker-alt prefix text-darken-4" style="color: #f06292;"></i>
+                    <textarea id="from" name="from" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.from -}}</textarea>
+                    <label for="from">From</label>
+                </div>
 
-                            <div class="input-field col s6"> 
-                                <!-- Pax Inbound (Inbound Passengers) input field -->
-                                <input id="pax-inbound" class="validate invalidate" name="pax_inbound" minlength="2" maxlength="25" type="text" value="{{ flight.pax_inbound }}" required>
-                                <label for="pax_inbound">Pax Inbound</label>                        
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <!-- Arrival time input field -->
-                                <input id="arrival" class="validate invalidate" name="arrival" minlength="2" maxlength="25" type="text" value="{{ flight.arrival }}" required>
-                                <label for="arrival">Arrival</label>    
-                            </div>
-                            <div class="input-field col s6">
-                                 <!-- Flight Outbound input field -->
-                                <input id="flight_outbound" class="validate invalidate" name="flight_outbound" minlength="2" maxlength="25" type="text" value="{{ flight.flight_outbound }}" required>
-                                <label for="flight_outbound">Flight Outbound</label>                        
-                            </div>
-                        </div>
+                <!-- flight inbound section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
+                    <textarea id="flight_inbound" name="flight_inbound" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.flight_inbound -}}</textarea>
+                    <label for="flight_inbound">Flight Inbound</label>
+                </div>
+            </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <!-- Destination input field -->
-                                <input id="to" class="validate invalidate" name="to" minlength="2" maxlength="25" type="text" value="{{ flight.to }}" required>
-                                <label for="to">To</label>    
-                            </div>
-                            <div class="input-field col s6">
-                                <!-- Aircraft Registration input field -->
-                                <input id="registration" class="validate invalidate" name="registration" minlength="2" maxlength="25" type="text" value="{{ flight.registration }}" required>
-                                <label for="registration">Registration</label>    
-                            </div>
-                        </div>  
+            <!-- sta section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
+                    <textarea id="sta" name="sta" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.sta -}}</textarea>
+                    <label for="sta">STA</label>
+                </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <!-- Aircraft input field -->
-                                <input id="aircraft-2" class="validate invalidate" name="aircraft-2" minlength="2" maxlength="25" type="text" value="{{ flight.aircraft }}" required>
-                                <label for="aircraft-2">Aircraft</label>    
-                            </div>
-                            <div class="input-field col s6">
-                                <!-- STD (Scheduled Time of Departure) input field -->
-                                <input id="std" class="validate invalidate" name="std" minlength="2" maxlength="25" type="text" value="{{ flight.std }}" required>
-                                <label for="std">STD</label>    
-                            </div>
-                        </div>
+                <!-- passenger inbound section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
+                    <textarea id="pax_inbound" name="pax_inbound" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.pax_inbound -}}</textarea>
+                    <label for="pax_inbound">Passengers Inbound</label>
+                </div>
+            </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <!-- Pax Outbound (Outbound Passengers) input field -->
-                                <input id="pax_outbound" class="validate invalidate" name="pax_outbound" minlength="2" maxlength="25" type="text" value="{{ flight.pax_outbound }}" required>
-                                <label for="pax_outbound">Pax Outbound</label>    
-                            </div>
-                            <div class="input-field col s6">
-                                <!-- Gate input field -->
-                                <input id="gate" class="validate invalidate" name="gate" minlength="2" maxlength="25" type="text" value="{{ flight.gate }}" required>
-                                <label for="gate">Gate</label>    
-                            </div>
-                        </div>
+            <!-- arrival section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
+                    <textarea id="arrival" name="arrival" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.arrival -}}</textarea>
+                    <label for="arrival">Arrival</label>
+                </div>
 
-                        <!-- Display the creator of the flight -->
-                        <p><em>by: {{ flight.created_by }}</em></p> 
+                <!-- flight outbound section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
+                    <textarea id="flight_outbound" name="flight_outbound" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.flight_outbound -}}</textarea>
+                    <label for="flight_outbound">Flight Outbound</label>
+                </div>
+            </div>
 
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% else %}
-        <!-- Message when no results are found -->
-        <h3 class="black-text text-darken-4 center-align">Sorry, No Results Found</h3>
-    {% endif %}
+            <!-- to section -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-map-marker-alt prefix text-darken-4" style="color: #ad1457;"></i>
+                    <textarea id="to" name="to" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.to -}}</textarea>
+                    <label for="to">To</label>
+                </div>
+
+                <!-- std section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
+                    <textarea id="std" name="std" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.std -}}</textarea>
+                    <label for="std">STD</label>
+                </div>
+            </div>
+
+            <!-- Passengers Outbound -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
+                    <textarea id="pax_outbound" name="pax_outbound" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.pax_outbound -}}</textarea>
+                    <label for="pax_outbound">Passengers Outbound</label>
+                </div>
+
+                <!-- gate section -->
+                <div class="input-field col s6">
+                    <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
+                    <textarea id="gate" name="gate" minlength="2"
+                        maxlength="20" class="materialize-textarea validate" required>{{- flight.gate -}}</textarea>
+                    <label for="gate">Gate</label>
+                </div>
+
+                <p><em>by: {{ flight.created_by }}</em></p>
+
+            </div> 
+        </li>
+        {% endfor %}
+    </ul>
     
     <!-- Modal Structure for confirmation -->
     <div id="confirm-modal" class="modal">

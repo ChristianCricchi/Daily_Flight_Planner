@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="gray-background">
+
     <div class="row white">
         <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">Edit Flight</h3>
         <form class="col s12" method="POST" action="{{ url_for('edit_flight', flight_id=flight._id) }}">
@@ -12,7 +13,7 @@
                     <select id="dispatch_name" name="dispatch_name" class="validate" required>
                         <option value="" disabled>Choose Dispatcher</option>
                         {% for dispatch in dispatcher %}
-                            {% if dispatch.dispatch_name == flight.dispatch_name %}
+                            {% if dispatch.dispatch_name == flight.dispatch_name  %}
                                 <option value="{{ dispatch.dispatch_name }}"selected>{{ dispatch.dispatch_name }}</option>
                             {% else %}
                                 <option value="{{ dispatch.dispatch_name }}">{{ dispatch.dispatch_name }}</option>
@@ -45,15 +46,15 @@
             <div class="row">
                 <div class="input-field col s6">
                     <div class="switch">
-                        <label for="special_assistance"></label>
-                            <i class="fas fa-exclamation-circle prefix text-darken-4" style="color: #e91e63;"></i>
-                                {% if flight.special_assistance == "on" %}
-                                    <input type="checkbox" id="special_assistance" name="special_assistance" checked>
-                                {% else %}
-                                    <input type="checkbox" id="special_assistance" name="special_assistance">
-                                {% endif %}
-                                <span class="lever"></span>
-                                Special
+                        <i class="fas fa-exclamation-circle prefix text-darken-4" style="color: #e91e63;"></i>
+                        <label for="special_assistance">
+                            {% if flight.special_assistance == "on" %}
+                                <input type="checkbox" id="special_assistance" name="special_assistance" checked>
+                            {% else %}
+                                <input type="checkbox" id="special_assistance" name="special_assistance">
+                            {% endif %}
+                            <span class="lever"></span>
+                            Special Assistance
                         </label>
                     </div>    
                 </div>
@@ -66,7 +67,7 @@
                     <label for="date">Date</label>
                 </div>
             </div>
-        
+
             <!-- type of aircraft section -->
             <div class="row">
                 <div class="input-field col s6">
@@ -75,7 +76,7 @@
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.aircraft -}}</textarea>
                     <label for="aircraft">Type of Aircraft</label>
                 </div>
-                               
+
                 <!-- registration section -->
                 <div class="input-field col s6">
                     <i class="fas fa-thin fa-plane prefix text-darken-4" style="color: #e91e63;"></i>
@@ -93,8 +94,7 @@
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.from -}}</textarea>
                     <label for="from">From</label>
                 </div>
-               
-                
+
                 <!-- flight inbound section -->
                 <div class="input-field col s6">
                     <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
@@ -112,7 +112,7 @@
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.sta -}}</textarea>
                     <label for="sta">STA</label>
                 </div>
-                
+
                 <!-- passenger inbound section -->
                 <div class="input-field col s6">
                     <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
@@ -130,7 +130,7 @@
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.arrival -}}</textarea>
                     <label for="arrival">Arrival</label>
                 </div>
-                
+
                 <!-- flight outbound section -->
                 <div class="input-field col s6">
                     <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
@@ -148,7 +148,7 @@
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.to -}}</textarea>
                     <label for="to">To</label>
                 </div>
-                 
+
                 <!-- std section -->
                 <div class="input-field col s6">
                     <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
@@ -157,16 +157,16 @@
                     <label for="std">STD</label>
                 </div>
             </div>
- 
+
             <!-- Passengers Outbound -->
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
                     <textarea id="pax_outbound" name="pax_outbound" minlength="2"
                         maxlength="20" class="materialize-textarea validate" required>{{- flight.pax_outbound -}}</textarea>
-                    <label for="pax_outbound">PaX Outbound</label>
+                    <label for="pax_outbound">Passengers Outbound</label>
                 </div>
-                
+
                 <!-- gate section -->
                 <div class="input-field col s6">
                     <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
@@ -192,3 +192,4 @@
     </div>
 </div>
 {% endblock %}
+

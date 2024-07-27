@@ -43,7 +43,7 @@ $(document).ready(function () {
         $('#update-report-form').submit();
     });
 
-    
+ 
     // Call function to validate Materialize select fields
     validateMaterializeSelect();
 

@@ -167,6 +167,7 @@ def edit_flight(flight_id):
         mongo.db.flights.update_one({"_id": ObjectId(flight_id)}, {
             "$set": submit})
         flash("Flight Successfully Updated")
+        return redirect(url_for("get_flights"))
     flight = mongo.db.flights.find_one({"_id": ObjectId(flight_id)})
     dispatcher = mongo.db.dispatcher.find().sort("dispatch_name", 1)
     return render_template(
