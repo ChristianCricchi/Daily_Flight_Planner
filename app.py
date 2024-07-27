@@ -241,6 +241,7 @@ def add_report():
             'report_content': request.form.get('report_content')
         }
         mongo.db.report.insert_one(new_report)
+        flash("Report Successfully Added")
         return redirect(url_for('report'))
 
 
@@ -254,6 +255,7 @@ def edit_report(report_id):
         }
         mongo.db.report.update_one({'_id': ObjectId(report_id)}, {
             '$set': updated_report})
+        flash("Report Successfully Updated")
         return redirect(url_for('report'))
     report = mongo.db.report.find_one({'_id': ObjectId(report_id)})
     return render_template('edit_report.html', report=report)
@@ -262,6 +264,7 @@ def edit_report(report_id):
 @app.route('/delete_report/<report_id>')
 def delete_report(report_id):
     mongo.db.report.delete_one({'_id': ObjectId(report_id)})
+    flash("Report Successfully Delete")
     return redirect(url_for('report'))
 
 
