@@ -70,8 +70,8 @@ h2, h3 {
 }
 
 .collapsible-header .col strong {
-    margin: 0.3125rem; /* 5px to rem */
-    line-height: 2.625rem; /* 42px to rem */
+    margin: 0.3125rem; 
+    line-height: 2.625rem; 
 }
 
 .button-container {
@@ -96,6 +96,35 @@ h2, h3 {
     border-radius: 5px; /* Add rounded corners if desired */
     margin-top: 20px; /* Top margin to separate from navigation menu */
 }
+
+/* Media query for iPhone SE */
+@media only screen 
+and (device-width: 375px) 
+and (device-height: 667px) 
+and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    font-size: 14px;
+  }
+
+  .custom-navbar,
+  .custom-navbar ul a,
+  .sidenav li a {
+    font-size: 1.1rem;
+  }
+
+  .custom-margin-top {
+    margin-top: 25px;
+  }
+
+  .form-spacing {
+    margin-top: 2.5rem;
+  }
+
+  h2, h3 {
+    font-size: 1.5rem;
+  }
+}
+
 
 /* Responsive styles */
 /* Mobile-first approach */
