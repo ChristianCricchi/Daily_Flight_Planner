@@ -75,3 +75,44 @@ In summary, the color scheme is vibrant and well-contrasted, designed to attract
 ### Fonts
 
 The Oswald font is the main font used throughout the whole website. This font was imported via Google Fonts. I am using Sans Serif as a backup font, in case for any reason the main font is not being imported into the site correctly.
+
+## Wireframes
+Wireframes were produced using Balsamiq. 
+
+<details>
+
+ <summary>Desktop Wireframe</summary>
+
+![Desktop Wireframe](static/images/desktop/About.png)
+
+![Desktop Wireframe](static/images/desktop/Dispatcher.png)
+
+![Desktop Wireframe](static/images/desktop/Home.png)
+
+![Desktop Wireframe](static/images/desktop/LogIn.png)
+
+![Desktop Wireframe](static/images/desktop/NewFlight.png)
+
+![Desktop Wireframe](static/images/desktop/Register.png)
+
+![Desktop Wireframe](static/images/desktop/Report.png)
+ </details>
+
+ <details>
+    <summary>Mobile Wireframe</summary>
+
+![Mobile Wireframe](static/images/mobile/AboutMobile.png)
+
+![Desktop Wireframe](static/images/mobile/DispatcherMobile.png)
+
+![Desktop Wireframe](static/images/mobile/HomeMobile.png)
+
+![Desktop Wireframe](static/images/mobile/LoginMobile.png)
+
+![Desktop Wireframe](static/images/mobile/NewFlightMobile.png)
+
+![Desktop Wireframe](static/images/mobile/RegisterMobile.png)
+
+![Desktop Wireframe](static/images/mobile/ReportMobile.png)
+
+ </details>
