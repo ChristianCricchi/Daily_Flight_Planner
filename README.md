@@ -163,7 +163,7 @@ Wireframes were produced using Balsamiq.
 | Dispatch page| Image | 
 | :---: | :---: | 
 | Entering the Dispatch page, the user can add,edit and delete a dispatcher to the database, | ![Nav bar image](static/images/docs/Dispatch/Dispatch.png) |
-   **Add Dispatch**: The user can add the dispatcher  | ![Nav bar image](static/images/docs/Dispatch/Dispatch1.png) |
+   **Add Dispatch**:   | ![Nav bar image](static/images/docs/Dispatch/Dispatch1.png) |
    **Add Dispatch**: | ![Nav bar image](static/images/docs/Dispatch/Dispatch2.png) |
    **Edit**: | The user can edit the dispatcher. ![Nav bar image](static/images/docs/Dispatch/Edit.png) |
    **Edit**: | ![Nav bar image](static/images/docs/Dispatch/Edit1.png) |
@@ -173,6 +173,14 @@ Wireframes were produced using Balsamiq.
    **Delete**: | ![Nav bar image](static/images/docs/Dispatch/Delete1.png) |
    **Delete**: | ![Nav bar image](static/images/docs/Dispatch/Delete2.png) |
   
+| Add Flight page| Image | 
+| :---: | :---: | 
+| By entering the New flight page, filling out the form, and pressing the "add flight" button, the user can add a new flight to the database. | ![Nav bar image](static/images/docs/AddFlight/AddFlight.png) |
+   **Add Flight**: | ![Nav bar image](static/images/docs/AddFlight/AddFlight1.png) |
+   **Add Flight**: | ![Nav bar image](static/images/docs/AddFlight/AddFlight2.png) |
+   **Add Flight**: | ![Nav bar image](static/images/docs/AddFlight/AddFlight3.png) |
+   **Add Flight**: | ![Nav bar image](static/images/docs/AddFlight/AddFlight4.png) |
+   
    
    
 
