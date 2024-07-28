@@ -4,6 +4,25 @@
 <div class="gray-background">
     <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">All Daily Flights</h3>
 
+    <div class="row card-panel grey lighten-5">
+        <form action="{{url_for('search')}}" method="post" class="col s12">
+            <div class="row valign wrapper center-align">
+                <div class="input field col s12 m8">
+                    <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+                     <input type="text" name="query" id="query" minlength="3" class="validate" required> 
+                     <label for="query">Search Tasks</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_flights')}}" class="red btn-small text-shadow">Reset</a> 
+                    <button type="submit" class=" pink darken-1 btn-small text-shadow">
+                        <i class="fas fa-search left"></i> Search 
+                    </button>
+                </div>
+            </div>        
+        </form>        
+    </div>
+
+    {% if flights | length > 0 %}
     <div class="container white">
         <ul class="collapsible">
             {% for flight in flights %}
@@ -160,22 +179,26 @@
                 </div> 
             </li>
             {% endfor %}
-        </ul>
-        
-        <!-- Modal Structure for confirmation -->
-        <div id="confirm-modal" class="modal">
-            <div class="modal-content">
-                <h4>Confirm</h4>
-                <p>Are you sure you want to continue?</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                <a href="#!" id="confirm-action" class="waves-effect waves-red btn-flat">Continue</a>
-            </div>
+        </ul> 
+        {% else %} 
+        <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+        {% endif %}
+    </div>
+
+    <!-- Modal Structure for confirmation -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h4>Confirm</h4>
+            <p>Are you sure you want to continue?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="#!" id="confirm-action" class="waves-effect waves-red btn-flat">Continue</a>
         </div>
     </div>
+
 </div>
 
 {% endblock %}
 
-            
+
