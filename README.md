@@ -51,9 +51,27 @@ Dispatch Account:
 - As a frequent user I want to be familiar with the application, as it is intuitive and secure, so that using the app does not create stress during working hours.
 
 ## Design
+
 ### Imagery
+
+The imagery used on the Daily Flight Planner site is very important to the overall experience of the user. A relaxed Red Arrows background, white background of container, different grade of pink is consistently used. This invoke a sense of calm in the user.
 
 ### Colours
 
+The image shows an application with a vibrant and contrasting color scheme. Here’s a detailed description of the colors used:
+
+- Main Background: An image with a light blue sky and acrobatic planes.
+- Navigation bar: Intense pink (#C2185B).
+- Title: Pink background with white text.
+- Buttons:
+    RESET: Orange background (#FF5722) with white text.
+    SEARCH: Pink background (#C2185B) with white text.
+Lower panel: Dark purple (#8E24AA) with white text.
+
+General text: Mainly white, with some exceptions in black for improved readability.
+In summary, the color scheme is vibrant and well-contrasted, designed to attract attention and facilitate visual interaction.
+
 
 ### Fonts
+
+The Oswald font is the main font used throughout the whole website. This font was imported via Google Fonts. I am using Sans Serif as a backup font, in case for any reason the main font is not being imported into the site correctly.
