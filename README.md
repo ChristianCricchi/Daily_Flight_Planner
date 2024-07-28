@@ -83,37 +83,37 @@ Wireframes were produced using Balsamiq.
 
  <summary>Desktop Wireframe</summary>
 
-![Desktop Wireframe](static/images/desktop/About.png)
+![Desktop Wireframe](static/images/Wireframe/desktop/About.png)
 
-![Desktop Wireframe](static/images/desktop/Dispatcher.png)
+![Desktop Wireframe](static/images/Wireframe/desktop/Dispatcher.png)
 
-![Desktop Wireframe](static/images/desktop/Home.png)
+![Desktop Wireframe](static/images/Wireframe/desktop/Home.png)
 
-![Desktop Wireframe](static/images/desktop/LogIn.png)
+![Desktop Wireframe](static/images/Wireframe/desktop/LogIn.png)
 
-![Desktop Wireframe](static/images/desktop/NewFlight.png)
+![Desktop Wireframe](static/images/Wireframe/desktop/NewFlight.png)
 
-![Desktop Wireframe](static/images/desktop/Register.png)
+![Desktop Wireframe](static/images/Wireframe/desktop/Register.png)
 
-![Desktop Wireframe](static/images/desktop/Report.png)
+![Desktop Wireframe](static/images/Wireframe/desktop/Report.png)
  </details>
 
  <details>
     <summary>Mobile Wireframe</summary>
 
-![Mobile Wireframe](static/images/mobile/AboutMobile.png)
+![Mobile Wireframe](static/images/Wireframe/mobile/AboutMobile.png)
 
-![Desktop Wireframe](static/images/mobile/DispatcherMobile.png)
+![Desktop Wireframe](static/images/Wireframe/mobile/DispatcherMobile.png)
 
-![Desktop Wireframe](static/images/mobile/HomeMobile.png)
+![Desktop Wireframe](static/images/Wireframe/mobile/HomeMobile.png)
 
-![Desktop Wireframe](static/images/mobile/LoginMobile.png)
+![Desktop Wireframe](static/images/Wireframe/mobile/LoginMobile.png)
 
-![Desktop Wireframe](static/images/mobile/NewFlightMobile.png)
+![Desktop Wireframe](static/images/Wireframe/mobile/NewFlightMobile.png)
 
-![Desktop Wireframe](static/images/mobile/RegisterMobile.png)
+![Desktop Wireframe](static/images/Wireframe/mobile/RegisterMobile.png)
 
-![Desktop Wireframe](static/images/mobile/ReportMobile.png)
+![Desktop Wireframe](static/images/Wireframe/mobile/ReportMobile.png)
 
  </details>
 
@@ -152,7 +152,6 @@ Wireframes were produced using Balsamiq.
 | :---: | :---: | 
 | Entering the Report page, the user can fill out the report form and submit it to the database, can view previously archived reports, and can modify and delete a report. | ![Nav bar image](static/images/docs/Report/Report.png) |
    **Report**: The user can fill out the form and clicking on the send button send it to the database. | ![Nav bar image](static/images/docs/Report/SendReport.png) |
-   **Send Report**:The user can push the send button and add the report | ![Nav bar image](stati) |
    **Report Added**: | ![Nav bar image](static/images/docs/Report/ReportAdded.png) |
    **Report Stored**: The user can check the report already stored. | ![Nav bar image](static/images/docs/Report/ReportStored.png) |
    **Edit**: | The user can edit the report stored. ![Nav bar image](static/images/docs/Report/Edit.png) |
@@ -160,6 +159,19 @@ Wireframes were produced using Balsamiq.
    **Edit**: | ![Nav bar image](static/images/docs/Report/Edit2.png) |
    **Delete**: The user can delete the report stored | ![Nav bar image](static/images/docs/Report/Delete.png) |
    **Delete**: | ![Nav bar image](static/images/docs/Report/Delete1.png) |
+
+| Dispatch page| Image | 
+| :---: | :---: | 
+| Entering the Dispatch page, the user can add,edit and delete a dispatcher to the database, | ![Nav bar image](static/images/docs/Dispatch/Dispatch.png) |
+   **Add Dispatch**: The user can add the dispatcher  | ![Nav bar image](static/images/docs/Dispatch/Dispatch1.png) |
+   **Add Dispatch**: | ![Nav bar image](static/images/docs/Dispatch/Dispatch2.png) |
+   **Edit**: | The user can edit the dispatcher. ![Nav bar image](static/images/docs/Dispatch/Edit.png) |
+   **Edit**: | ![Nav bar image](static/images/docs/Dispatch/Edit1.png) |
+   **Edit**: | ![Nav bar image](static/images/docs/Dispatch/Edit2.png) |
+   **Edit**: | ![Nav bar image](static/images/docs/Dispatch/Edit3.png) |
+   **Delete**: The user can delete the dispatcher| ![Nav bar image](static/images/docs/Dispatch/Delete.png) |
+   **Delete**: | ![Nav bar image](static/images/docs/Dispatch/Delete1.png) |
+   **Delete**: | ![Nav bar image](static/images/docs/Dispatch/Delete2.png) |
   
    
    
