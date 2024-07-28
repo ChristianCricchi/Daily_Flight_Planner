@@ -97,73 +97,7 @@ h2, h3 {
     margin-top: 20px; /* Top margin to separate from navigation menu */
 }
 
-/* Media query for iPhone SE */
-@media only screen 
-and (device-width: 375px) 
-and (device-height: 667px) 
-and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    font-size: 14px;
-  }
-
-  .custom-navbar,
-  .custom-navbar ul a,
-  .sidenav li a {
-    font-size: 1.1rem;
-  }
-
-  .custom-margin-top {
-    margin-top: 25px;
-  }
-
-  .form-spacing {
-    margin-top: 2.5rem;
-  }
-
-  h2, h3 {
-    font-size: 1.5rem;
-  }
-}
 
 
-/* Responsive styles */
-/* Mobile-first approach */
-@media (min-width: 600px) {
-    .custom-navbar,
-    .custom-navbar ul a,
-    .sidenav li a {
-        font-size: 1.3rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .custom-navbar,
-    .custom-navbar ul a,
-    .sidenav li a {
-        font-size: 1.3rem;
-    }
-}
-
-.custom-margin-top {
-    margin-top: 50px;
-}
-
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-}
-
-@media screen and (min-width: 769px) {
-    body {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 600px) {
-    .custom-margin-top {
-        margin-top: 30px; /* Smaller margin for small screens */
-    }
-}
 
 
