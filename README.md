@@ -121,20 +121,51 @@ Wireframes were produced using Balsamiq.
 
 | Log In AdminOps Page| Image | 
 | :---: | :---: | 
-| When the user enters the application, it can easily orient themselves because there is an Header at the top of the page, there is the text "© 2024 Daily Flight Planner" on the left and a "Log In" link on the right. Login Form in the center of the page, there is a login form with the following elements: Title: "Log In" in large, visible characters. Username Field: Labeled with the word "Username". Password Field labeled with an icon of a lock and the word"Password". Login Button a rectangular button with the text "LOG IN".| ![Nav bar image](static/images/docs/LogIn.png) |
+| When the user enters the username and password and clicks the "Log In" button, they will enter the AdminOps User profile.| ![Nav bar image](static/images/docs/AdminOps/LogIn.png) |
 
 | Profile page| Image | 
 | :---: | :---: | 
-|  When the user clicks the "login button" they are welcome message and different buttond where the user can go: | ![Nav bar image](static/images/docs/Profile.png) |
-   **Home**: Clickin on Home the user can access the Home page. By clicking, you will encounter the list of flights for the day, an area where you can search in the database, and two buttons where you can delete or edit flights. | ![Nav bar image](static/images/docs/Home.png) |
-   **About**: The user, by clicking on the About button, will encounter a page with an explanation of the app and a button that, when clicked, will return them to the Home page.  | ![Nav bar image](static/images/docs/About.png) |
-   **Report**: When the user clicks on the report button, they encounter a form where they can enter the report data and a button to send the report to the database. At the bottom, they can view all the reports currently in the database.  | ![Nav bar image](static/images/docs/Report.png) |
-   **Report**:  | ![Nav bar image](static/images/docs/Raport1.png) |
-   **Dispatch**: When the user clicks on the Dispatch button, they encounter a page where they can add a dispatcher to the existing list by clicking on the "add dispatch" button. Then they see a list of all dispatchers currently working at the airport. Additionally, by clicking on the Edit and Delete buttons, they can delete or edit the dispatchers already present in the database.  | ![Nav bar image](static/images/docs/Dispatch.png) |
-   **Register**: On this page, the user can create a new user account by entering the username, password, and clicking on the register button. | ![Nav bar image](static/images/docs/Register.png) |
-   **New Flight**: When the user clicks on "Add_flight", they will find a form that, when filled out, will allow them to create a new flight. | ![Nav bar image](static/images/docs/Add_flight.png) |
-   **New Flight**:  | ![Nav bar image](static/images/docs/Add_flight1.png) |
-   **Log Out**: When the user clicks on "Log Out", they are logged out of the system and automatically redirected to the "Log In" page. | ![Nav bar image](static/images/docs/LogOut.png) |
+|  When the user clicks the "login button" they are welcome message and different buttond where the user can go: | ![Nav bar image](static/images/docs/AdminOps/Profile.png) |
+   **Home**: Clickin on Home the user can access the Home page. By clicking, you will encounter the list of flights for the day, an area where you can search in the database, and two buttons where you can delete or edit flights. | ![Nav bar image](static/images/docs/AdminOps/Home.png) |
+   **About**: The user, by clicking on the About button, will encounter a page with an explanation of the app and a button that, when clicked, will return them to the Home page.  | ![Nav bar image](static/images/docs/AdminOps/About.png) |
+   **Report**: When the user clicks on the report button, they encounter a form where they can enter the report data and a button to send the report to the database. At the bottom, they can view all the reports currently in the database.  | ![Nav bar image](static/images/docs/AdminOps/Report.png) |
+   **Report**:  | ![Nav bar image](static/images/docs/AdminOps/Raport1.png) |
+   **Dispatch**: When the user clicks on the Dispatch button, they encounter a page where they can add a dispatcher to the existing list by clicking on the "add dispatch" button. Then they see a list of all dispatchers currently working at the airport. Additionally, by clicking on the Edit and Delete buttons, they can delete or edit the dispatchers already present in the database.  | ![Nav bar image](static/images/docs/AdminOps/Dispatch.png) |
+   **Register**: On this page, the user can create a new user account by entering the username, password, and clicking on the register button. | ![Nav bar image](static/images/docs/AdminOps/Register.png) |
+   **New Flight**: When the user clicks on "Add_flight", they will find a form that, when filled out, will allow them to create a new flight. | ![Nav bar image](static/images/docs/AdminOps/Add_flight.png) |
+   **New Flight**:  | ![Nav bar image](static/images/docs/AdminOps/Add_flight1.png) |
+   **Log Out**: When the user clicks on "Log Out", they are logged out of the system and automatically redirected to the "Log In" page. | ![Nav bar image](static/images/docs/AdminOps/LogOut.png) |
+
+| Home page| Image | 
+| :---: | :---: | 
+| When the user enters the Home page, they encounter a list of all flights. By clicking on the arrow, a collapsible menu will open, providing all the information about the flight. By clicking on the search button, they can perform a search in the database, looking for flights by name and flight number. Clicking on the "Dispatched" button will delete the flight, and clicking on the "Edit" button will allow them to edit the flight.  | ![Nav bar image](static/images/docs/Home/Home.png) |
+   **Search**: The user clicks on "Search" and perform a search by name or flight number. | ![Nav bar image](static/images/docs/Home/Search.png) |
+   **Search**: | ![Nav bar image](static/images/docs/Home/Search1.png) |
+   **Dispatched**: By pressing the arrow, the user can see all the information that the dispatcher has to take off their flight. | ![Nav bar image](static/images/docs/Home/Dispatched.png) |
+   **Dispatched**: | ![Nav bar image](static/images/docs/Home/Dispatched2.png) |
+   **Edit**: By pressing "Edit", the user can edit the flight. | ![Nav bar image](static/images/docs/Home/Edit.png) |
+   **Edit**: | ![Nav bar image](static/images/docs/Home/Edit1.png) |
+   **Arrow**: By pressing the "Arrow", the user can check all the flight informations. | ![Nav bar image](static/images/docs/Home/SeeInformation.png) |
+   **Edit**: | ![Nav bar image](static/images/docs/Home/SeeInformation2.png) |   
+
+| Report page| Image | 
+| :---: | :---: | 
+| Entering the Report page, the user can fill out the report form and submit it to the database, can view previously archived reports, and can modify and delete a report. | ![Nav bar image](static/images/docs/Report/Report.png) |
+   **Report**: The user can fill out the form and clicking on the send button send it to the database. | ![Nav bar image](static/images/docs/Report/SendReport.png) |
+   **Send Report**:The user can push the send button and add the report | ![Nav bar image](stati) |
+   **Report Added**: | ![Nav bar image](static/images/docs/Report/ReportAdded.png) |
+   **Report Stored**: The user can check the report already stored. | ![Nav bar image](static/images/docs/Report/ReportStored.png) |
+   **Edit**: | The user can edit the report stored. ![Nav bar image](static/images/docs/Report/Edit.png) |
+   **Edit**: | ![Nav bar image](static/images/docs/Report/Edit1.png) |
+   **Edit**: | ![Nav bar image](static/images/docs/Report/Edit2.png) |
+   **Delete**: The user can delete the report stored | ![Nav bar image](static/images/docs/Report/Delete.png) |
+   **Delete**: | ![Nav bar image](static/images/docs/Report/Delete1.png) |
+  
+   
+   
+
+
+
 
 
 
