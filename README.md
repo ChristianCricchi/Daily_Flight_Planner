@@ -26,17 +26,29 @@ Dispatch Account:
 
 ## Site owner Goals
 
+- TThe purpose of this app is to provide a solution for companies operating in the aviation sector, enhancing the creation and planning of daily flights. This app is primarily aimed at AdminOps and Dispatchers.
+- To provide the user an app where Operatives/Dispatch team can planning in a better way their daily ground service.
+- To provide the user with an app that is easy to navigate, fully responsive, that invokes a sense of no-stress through the use of appropriate colors and layout.
+- To provide the user the instructions of the app.
 
 ## User Stories
 
 ### First time user
 
+- As a first time user I want to understand the main purpose of the DFP app.
+- As a first time user I want to be able to intuitively navigate the DFP app.
+- As a first time user I want a fully responsive app.
+- As a first time user I want a full instructions to navigate and know how to use the DFP app.
 
 ### Returning User
 
+- As a returning user I want to easily navigate to the Daily Flight planner app.
+- As a returning user I want to choose different level of privilege that the different type user have on Daily Flight Planner.
+- As a returning user I want to do my work intuitively, quickly, and securely.
 
 ### Frequent User
 
+- As a frequent user I want to be familiar with the application, as it is intuitive and secure, so that using the app does not create stress during working hours.
 
 ## Design
 ### Imagery
