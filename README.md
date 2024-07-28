@@ -119,8 +119,22 @@ Wireframes were produced using Balsamiq.
 
  ## Features
 
-| Home Page| Image | 
+| Log In AdminOps Page| Image | 
 | :---: | :---: | 
-| When the user enters the application, it can easily orient themselves because there is an Header at the top of the page, there is the text "© 2024 Daily Flight Planner" on the left and a "Log In" link on the right. Login Form in the center of the page, there is a login form with the following elements: Title: "Log In" in large, visible characters. Username Field: Labeled with the word "Username".
-Password Field: Labeled with an icon of a lock and the word"Password".
-Login Button: A rectangular button with the text "LOG IN".| ![Nav bar image]() |
+| When the user enters the application, it can easily orient themselves because there is an Header at the top of the page, there is the text "© 2024 Daily Flight Planner" on the left and a "Log In" link on the right. Login Form in the center of the page, there is a login form with the following elements: Title: "Log In" in large, visible characters. Username Field: Labeled with the word "Username". Password Field labeled with an icon of a lock and the word"Password". Login Button a rectangular button with the text "LOG IN".| ![Nav bar image](static/images/docs/LogIn.png) |
+
+| Profile page| Image | 
+| :---: | :---: | 
+|  When the user clicks the "login button" they are welcome message and different buttond where the user can go: | ![Nav bar image](static/images/docs/Profile.png) |
+   **Home**: Clickin on Home the user can access the Home page. By clicking, you will encounter the list of flights for the day, an area where you can search in the database, and two buttons where you can delete or edit flights. | ![Nav bar image](static/images/docs/Home.png) |
+   **About**: The user, by clicking on the About button, will encounter a page with an explanation of the app and a button that, when clicked, will return them to the Home page.  | ![Nav bar image](static/images/docs/About.png) |
+   **Report**: When the user clicks on the report button, they encounter a form where they can enter the report data and a button to send the report to the database. At the bottom, they can view all the reports currently in the database.  | ![Nav bar image](static/images/docs/Report.png) |
+   **Report**:  | ![Nav bar image](static/images/docs/Raport1.png) |
+   **Dispatch**: When the user clicks on the Dispatch button, they encounter a page where they can add a dispatcher to the existing list by clicking on the "add dispatch" button. Then they see a list of all dispatchers currently working at the airport. Additionally, by clicking on the Edit and Delete buttons, they can delete or edit the dispatchers already present in the database.  | ![Nav bar image](static/images/docs/Dispatch.png) |
+   **Register**: On this page, the user can create a new user account by entering the username, password, and clicking on the register button. | ![Nav bar image](static/images/docs/Register.png) |
+   **New Flight**: When the user clicks on "Add_flight", they will find a form that, when filled out, will allow them to create a new flight. | ![Nav bar image](static/images/docs/Add_flight.png) |
+   **New Flight**:  | ![Nav bar image](static/images/docs/Add_flight1.png) |
+   **Log Out**: When the user clicks on "Log Out", they are logged out of the system and automatically redirected to the "Log In" page. | ![Nav bar image](static/images/docs/LogOut.png) |
+
+
+
