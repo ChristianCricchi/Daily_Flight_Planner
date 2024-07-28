@@ -1,7 +1,6 @@
 /* Import Google font */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-/* Global styles */
 body {
     background: url("../images/background.jpg") no-repeat fixed center center/cover;
     font-family: 'Oswald', sans-serif;
@@ -12,17 +11,15 @@ body {
     padding-top: 3.125rem; /* 50px to rem */
 }
 
-/* Header styles */
 .fixed-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Ensure the header is above other content */
-    transition: background-color 0.3s; /* Optional: for a smooth background change */
+    z-index: 1000;
+    transition: background-color 0.3s;
 }
 
-/* Typography styles */
 h2, h3 {
     font-weight: 300;
     margin-top: 0.1rem;
@@ -34,7 +31,6 @@ h2, h3 {
     text-shadow: 2px 2px 2px #ad1457;
 }
 
-/* Navigation styles */
 .sidenav {
     background-color: #ad1457;
 }
@@ -50,7 +46,6 @@ h2, h3 {
     font-size: 1rem;
 }
 
-/* Form and layout styles */
 .form-spacing {
     margin-top: 3.125rem; /* 50px to rem */
 }
@@ -77,24 +72,47 @@ h2, h3 {
 .button-container {
     display: flex;
     gap: 0.0625rem; /* 1px to rem */
-    align-items: center; /* Vertically center the buttons */
+    align-items: center;
 }
 
 .brand-text {
-    font-size: 0.9rem; /* Adjust this value as needed */
+    font-size: 0.9rem;
 }
 
-/* Navigation bar and background styles */
+
 .navigation-bar {
-    background-color: #333; /* Background color for the navigation bar */
-    padding: 50px 20px; /* Padding for the navigation bar */
+    background-color: #333;
+    padding: 3.125rem 1.25rem; /* 50px 20px to rem */
 }
 
 .gray-background {
-    background-color: #f0f0f0; /* Light gray color */
-    padding: 20px; /* Add padding for internal spacing */
-    border-radius: 5px; /* Add rounded corners if desired */
-    margin-top: 20px; /* Top margin to separate from navigation menu */
+    background-color: #f0f0f0;
+    padding: 1.25rem; /* 20px to rem */
+    border-radius: 0.3125rem; /* 5px to rem */
+    margin-top: 1.25rem; /* 20px to rem */
+}
+
+/* Mobile styles */
+@media (min-width: 375px) {
+    body {
+        font-size: 1rem;
+        padding-top: 3.125rem;
+        padding-bottom: 3.125rem;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 600px) {
+    body {
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.5rem;
+    }
 }
 
 

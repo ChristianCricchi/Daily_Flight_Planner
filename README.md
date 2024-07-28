@@ -1,6 +1,6 @@
 # **Daily Flight Planner**
 
-Daily Flight Planner is an application designed for the aviation industry, especially for operations/dispatchers, that allows the planning and assignment of daily flights at an airport to various dispatchers. There are two types of login access:
+Daily Flight Planner is an application designed for the aviation industry, especially for operations/dispatchers, that allows the planning and assignment of daily flights at an airport to various dispatchers. There are two types of login with two different levels of privileges:
 
 AdminOps Account:
 
@@ -22,7 +22,7 @@ Dispatch Account:
 
 [Daily Flight Planner](https://daily-flight-planner-3bcd72540a25.herokuapp.com/)
 
-![Daily Flight Planner is responsive]()
+![Daily Flight Planner is responsive](assets/img/AmIResponsive.png)
 
 ## Site owner Goals
 
