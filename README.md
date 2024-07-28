@@ -122,9 +122,9 @@ Wireframes were produced using Balsamiq.
 | Home Page| Image | 
 | :---: | :---: | 
 | When the user enters the application, it can easily orient themselves because there is: 
-**Header**: At the top of the page, there is the text "© 2024 Daily Flight Planner" on the left and a "Log In" link on the right.
-**Login Form**: In the center of the page, there is a login form with the following elements:
-**Title**: "Log In" in large, visible characters.
-**Username Field**: Labeled with the word "Username".
-**Password Field**: Labeled with an icon of a lock and the word "Password".
-**Login Button**: A rectangular button with the text "LOG IN".| ![Nav bar image]() |
+Header: At the top of the page, there is the text "© 2024 Daily Flight Planner" on the left and a "Log In" link on the right.
+Login Form: In the center of the page, there is a login form with the following elements:
+Title: "Log In" in large, visible characters.
+Username Field: Labeled with the word "Username".
+Password Field: Labeled with an icon of a lock and the word "Password".
+Login Button: A rectangular button with the text "LOG IN".| ![Nav bar image]() |
