@@ -254,6 +254,46 @@ Wireframes were produced using Balsamiq.
 | :---: | :---: | :---: | :---: | 
 | app.py | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/python/python.PNG)|
 
+- #### Accessibility 
+  - The site achieved a Lighthouse accessibility median score of 96% which confirms that the colours and fonts chosen are easy to read and accessible.
+
+    - Desktop
+
+| File | Test | Pass | Image |
+| :---: | :---: | :---: | :---: | 
+|   | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
+|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
+|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
+| | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
+|   | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
+| l  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
+
+- #### Accessibility 
+  - The site achieved a Lighthouse accessibility median score of 96% which confirms that the colours and fonts chosen are easy to read and accessible.
+
+    - Mobile  
+
+| File | Test | Pass | Image |
+| :---: | :---: | :---: | :---: | 
+| | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
+|   | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
+|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
+|   | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
+|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
+|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
+
+
+- ### Testing User Stories
+  I set some manual test to test the User Stories.
+
+| Name | Test | Result | Pass |
+| :---: | :---: | :---: | :---: | 
+| Test 1 | As a user, I want the site to be intuitive, so I can quickly find the functionality. | All acceptance for the intuitive experience have been met, as verified through user testing. | Yes |
+| Test 2 | As a user, I want the site to be responsive. | All acceptance criteria for responsive app have been meet, as verified through comprehensive testing on a variety of devices and browsers | Yes |
+| Test 3 | As a user, I want to be able to choose in a fast way all my option. | All acceptance criteria for the topic selection have been meet, as verified through user testing. | Yes |
+| Test 4 | As a user, I want be able to check the instructions of the app. | All acceptance criteria for dynamic have been meet, as verified through comprehensive user testing. | Yes |
+
+
 
 
 
