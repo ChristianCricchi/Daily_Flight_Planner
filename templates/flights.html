@@ -45,24 +45,25 @@
                             data-position="right" data-tooltip="Special Assistance!"></i>
                         {% endif %}
                     </div>
-
                 </div>
+
                 <div class="collapsible-body">
                     <!-- stand section -->
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="fas fa-thin fa-parking prefix text-darken-4" style="color: #e91e63;"></i>
-                        <input id="stand_{{ flight.id }}" name="stand_{{ flight.id }}" minlength="2" maxlength="20"
-                            value="{{ flight.stand }}" type="text" class="validate" required>
-                        <label for="stand_{{ flight.id }}">Stand</label>
-                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="fas fa-thin fa-parking prefix text-darken-4" style="color: #e91e63;"></i>
+                            <input id="stand_{{ flight.id }}_{{ loop.index }}" name="stand_{{ flight.id }}_{{ loop.index }}" minlength="2" maxlength="20"
+                                value="{{ flight.stand }}" type="text" class="validate" required>
+                            <label for="stand_{{ flight.id }}_{{ loop.index }}">Stand</label>
+                        </div>
 
-                    <!-- comment section -->
-                    <div class="input-field col s6">
-                        <i class="fas fa-thin fa-comments prefix prefix text-darken-4" style="color: #e91e63;"></i>
-                        <textarea id="comments_{{ flight.id }}" name="comments_{{ flight.id }}" minlength="5"
-                            maxlength="250" class="materialize-textarea validate" required>{{- flight.comments -}}</textarea>
-                        <label for="comments_{{ flight.id }}">Comments</label>
+                        <!-- comment section -->
+                        <div class="input-field col s6">
+                            <i class="fas fa-thin fa-comments prefix prefix text-darken-4" style="color: #e91e63;"></i>
+                            <textarea id="comments_{{ flight.id }}_{{ loop.index }}" name="comments_{{ flight.id }}_{{ loop.index }}" minlength="5"
+                                maxlength="250" class="materialize-textarea validate" required>{{- flight.comments -}}</textarea>
+                            <label for="comments_{{ flight.id }}_{{ loop.index }}">Comments</label>
+                        </div>
                     </div>
                 </div>
 
@@ -70,17 +71,17 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane prefix text-darken-4" style="color: #e91e63;"></i>
-                        <textarea id="aircraft_{{flight.id}}" name="aircraft_{{ flight.id }}" minlength="2"
+                        <textarea id="aircraft_{{flight.id}}_{{ loop.index }}" name="aircraft_{{flight.id}}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.aircraft -}}</textarea>
-                        <label for="aircraft_{{ flight.id }}">Aircraft</label>
+                        <label for="aircraft_{{flight.id}}_{{ loop.index }}">Aircraft</label>
                     </div>
 
                     <!-- registration section -->
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane prefix text-darken-4" style="color: #e91e63;"></i>
-                        <textarea id="registration_{{ flight.id }}" name="registration_{{ flight.id }}" minlength="2"
+                        <textarea id="registration_{{ flight.id }}_{{ loop.index }}" name="registration_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.registration -}}</textarea>
-                        <label for="registration_{{ flight.id }}">Registration</label>
+                        <label for="registration_{{ flight.id }}_{{ loop.index }}">Registration</label>
                     </div>
                 </div>
 
@@ -88,18 +89,18 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="fas fa-map-marker-alt prefix text-darken-4" style="color: #f06292;"></i>
-                        <textarea id="from_{{ flight.id }}" name="from_{{ flight.id }}" minlength="2"
+                        <textarea id="from_{{ flight.id }}_{{ loop.index }}" name="from_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.from -}}</textarea>
-                        <label for="from_{{ flight.id }}">From</label>
+                        <label for="from_{{ flight.id }}_{{ loop.index }}">From</label>
                     </div>
 
 
                     <!-- flight inbound section -->
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
-                        <textarea id="flight_inbound_{{ flight.id }}" name="flight_inbound_{{ flight.id }}" minlength="2"
+                        <textarea id="flight_inbound_{{ flight.id }}_{{ loop.index }}" name="flight_inbound_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.flight_inbound -}}</textarea>
-                        <label for="flight_inbound_{{ flight.id }}">Flight In</label>
+                        <label for="flight_inbound_{{ flight.id }}_{{ loop.index }}">Flight In</label>
                     </div>
                 </div>
 
@@ -107,17 +108,17 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
-                        <textarea id="sta_{{ flight.id }}" name="sta_{{ flight.id }}" minlength="2"
+                        <textarea id="sta_{{ flight.id }}_{{ loop.index }}" name="sta_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.sta -}}</textarea>
-                        <label for="sta_{{ flight.id }}">STA</label>
+                        <label for="sta_{{ flight.id }}_{{ loop.index }}">STA</label>
                     </div>
 
                     <!-- passenger inbound section -->
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
-                        <textarea id="pax_inbound_{{ flight.id }}" name="pax_inbound_{{ flight.id }}" minlength="2"
+                        <textarea id="pax_inbound_{{ flight.id }}_{{ loop.index }}" name="pax_inbound_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.pax_inbound -}}</textarea>
-                        <label for="pax_inbound_{{ flight.id }}">Pax In</label>
+                        <label for="pax_inbound_{{ flight.id }}_{{ loop.index }}">Pax In</label>
                     </div>
                 </div>
 
@@ -125,17 +126,17 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane-arrival prefix text-darken-4" style="color: #f06292;"></i>
-                        <textarea id="arrival_{{ flight.id }}" name="arrival_{{ flight.id }}" minlength="2"
+                        <textarea id="arrival_{{ flight.id }}_{{ loop.index }}" name="arrival_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.arrival -}}</textarea>
-                        <label for="arrival_{{ flight.id }}">Arrival</label>
+                        <label for="arrival_{{ flight.id }}_{{ loop.index }}">Arrival</label>
                     </div>
 
                     <!-- flight outbound section -->
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
-                        <textarea id="flight_outbound_{{ flight.id }}" name="flight_outbound_{{ flight.id }}" minlength="2"
+                        <textarea id="flight_outbound_{{ flight.id }}_{{ loop.index }}" name="flight_outbound_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.flight_outbound -}}</textarea>
-                        <label for="flight_outbound_{{ flight.id }}">Flight Out</label>
+                        <label for="flight_outbound_{{ flight.id }}_{{ loop.index }}">Flight Out</label>
                     </div>
                 </div>
 
@@ -143,17 +144,17 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="fas fa-map-marker-alt prefix text-darken-4" style="color: #ad1457;"></i>
-                        <textarea id="to_{{ flight.id }}" name="to_{{ flight.id }}" minlength="2"
+                        <textarea id="to_{{ flight.id }}_{{ loop.index }}" name="to_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.to -}}</textarea>
-                        <label for="to_{{ flight.id }}">To</label>
+                        <label for="to_{{ flight.id }}_{{ loop.index }}">To</label>
                     </div>
 
                     <!-- std section -->
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
-                        <textarea id="std_{{ flight.id }}" name="std_{{ flight.id }}" minlength="2"
+                        <textarea id="std_{{ flight.id }}_{{ loop.index }}" name="std_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.std -}}</textarea>
-                        <label for="std_{{ flight.id }}">STD</label>
+                        <label for="std_{{ flight.id }}_{{ loop.index }}">STD</label>
                     </div>
                 </div>
 
@@ -161,17 +162,17 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
-                        <textarea id="pax_outbound_{{ flight.id }}" name="pax_outbound_{{ flight.id }}" minlength="2"
+                        <textarea id="pax_outbound_{{ flight.id }}_{{ loop.index }}" name="pax_outbound_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.pax_outbound -}}</textarea>
-                        <label for="pax_outbound_{{ flight.id }}">Pax Out</label>
+                        <label for="pax_outbound_{{ flight.id }}_{{ loop.index }}">Pax Out</label>
                     </div>
 
                     <!-- gate section -->
                     <div class="input-field col s6">
                         <i class="fas fa-thin fa-plane-departure prefix text-darken-4" style="color: #ad1457;"></i>
-                        <textarea id="gate_{{ flight.id }}" name="gate_{{ flight.id }}" minlength="2"
+                        <textarea id="gate_{{ flight.id }}_{{ loop.index }}" name="gate_{{ flight.id }}_{{ loop.index }}" minlength="2"
                             maxlength="20" class="materialize-textarea validate" required>{{- flight.gate -}}</textarea>
-                        <label for="gate_{{ flight.id }}">Gate</label>
+                        <label for="gate_{{ flight.id }}_{{ loop.index }}">Gate</label>
                     </div>
 
                     <p><em>by: {{ flight.created_by }}</em></p>
@@ -180,6 +181,7 @@
             </li>
             {% endfor %}
         </ul> 
+
         {% else %} 
         <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
         {% endif %}

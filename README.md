@@ -209,6 +209,32 @@ Wireframes were produced using Balsamiq.
    **Log Out**: When the user clicks on "Log Out", they are logged out of the system and automatically redirected to the "Log In" page. | ![Nav bar image](static/images/docs/DispatchProfile/LogOut.png) |
 
 
+   ## Features left to Implement
+
+| Number | Feature |
+| :---: | :---: |
+| 1 |By adding new functionalities to the report page, creating a more detailed form for the report. |
+| 2 | Integrating the app with the check-in agent app, with the ramp app, and with the airport management. Creating a SuperUser to manage this entire system. |
+
+
+## Testing
+
+### Validator Testing
+
+- #### HTML
+    - No errors were returned when passing through the official W3C Markup Validator
+
+| File | Test | Pass | Image |
+| :---: | :---: | :---: | :---: | 
+|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
+|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
+|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](docs/html/highscoresHtml.PNG)|
+|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
+|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
+|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
+
+
+
 
 
    

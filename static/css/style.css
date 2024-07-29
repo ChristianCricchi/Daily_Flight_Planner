@@ -11,6 +11,13 @@ body {
     padding-top: 3.125rem; /* 50px to rem */
 }
 
+.gray-background {
+  background-color: #f0f0f0;
+  padding: 1.25rem; /* 20px to rem */
+  border-radius: 0.3125rem; /* 5px to rem */
+  margin-top: 1.25rem; /* 20px to rem */
+}
+
 .fixed-header {
     position: fixed;
     top: 0;
@@ -85,19 +92,7 @@ h2, h3 {
     padding: 3.125rem 1.25rem; /* 50px 20px to rem */
 }
 
-.gray-background {
-    background-color: #f0f0f0;
-    padding: 1.25rem; /* 20px to rem */
-    border-radius: 0.3125rem; /* 5px to rem */
-    margin-top: 1.25rem; /* 20px to rem */
-}
-
-/* Media query for Samsung Galaxy S10 */
-@media only screen 
-  and (min-device-width: 360px) 
-  and (max-device-width: 760px) 
-  and (-webkit-device-pixel-ratio: 4) {
-
+    
   /* Adjust global styles */
   body {
     font-size: 0.9rem;
@@ -150,11 +145,6 @@ h2, h3 {
     padding: 30px 15px;
   }
 
-  .gray-background {
-    padding: 15px;
-    margin-top: 15px;
-  }
-
   /* Additional responsive adjustments */
   .brand-text {
     font-size: 0.8rem;
@@ -164,7 +154,7 @@ h2, h3 {
     font-size: 1rem;
     line-height: 1.5;
   }
-}
+
 
 /* Mobile styles */
 @media (min-width: 375px) {
