@@ -197,16 +197,16 @@ Wireframes were produced using Balsamiq.
 
    | Log In Dispatcher Page| Image | 
 | :---: | :---: | 
-| When the user enters the username and password and clicks the "Log In" button, they will enter the Dispatch User profile.| ![Nav bar image](stati) |
+| When the user enters the username and password and clicks the "Log In" button, they will enter the Dispatcher profile. This type of user has limited functionalities as they are at a lower level than the AdminOps user. | ![Nav bar image](static/images/docs/DispatchProfile/Profile.png) |
 
 | Dispatch Profile page| Image | 
 | :---: | :---: | 
-|  When the user clicks the "login button" there is welcome message and different button where the user can go: | ![Nav bar image](stati) |
-   **Home**: Clickin on Home the user can access the Home page. By clicking, you will encounter the list of flights for the day, an area where you can search in the database. | ![Nav bar image](stati) |
-   **About**: The user, by clicking on the About button, will encounter a page with an explanation of the app and a button that, when clicked, will return them to the Home page.  | ![Nav bar image](stati) |
-   **Report**: When the user clicks on the report button, they encounter a form where they can enter the report data and a button to send the report to the database. At the bottom, they can view all the reports currently in the database.  | ![Nav bar image](stati) |
-   **Report**:  | ![Nav bar image](stati) |
-   **Log Out**: When the user clicks on "Log Out", they are logged out of the system and automatically redirected to the "Log In" page. | ![Nav bar image](s) |
+|  When the user clicks the "login button" there is welcome message and different button where the user can go: | ![Nav bar image](static/images/docs/DispatchProfile/ProfileD.png) |
+   **Home**: Clickin on Home the user can access the Home page. By clicking, you will encounter the list of flights for the day, an area where you can search in the database. | ![Nav bar image](static/images/docs/DispatchProfile/Home.png) |
+   **About**: The user, by clicking on the About button, will encounter a page with an explanation of the app and a button that, when clicked, will return them to the Home page.  | ![Nav bar image](static/images/docs/DispatchProfile/About.png) |
+   **Report**: When the user clicks on the report button, they encounter a form where they can enter the report data and a button to send the report to the database. At the bottom, they can view all the reports currently in the database.  | ![Nav bar image](static/images/docs/DispatchProfile/Report.png) |
+   **Report**:  | ![Nav bar image](static/images/docs/DispatchProfile/Report1.png) |
+   **Log Out**: When the user clicks on "Log Out", they are logged out of the system and automatically redirected to the "Log In" page. | ![Nav bar image](static/images/docs/DispatchProfile/LogOut.png) |
 
 
 
