@@ -1,6 +1,6 @@
 # **Daily Flight Planner**
 
-Daily Flight Planner is an application designed for the aviation industry, especially for operations/dispatchers, that allows the planning and assignment of daily flights at an airport to various dispatchers. There are two types of login with two different levels of privileges:
+Daily Flight Planner is an application designed for the aviation industry, especially for operations/dispatchers, that allows the planning and assignment of daily flights at an airport to various dispatchers. There are two types of User with two different levels of privileges:
 
 AdminOps Account:
 
@@ -21,6 +21,11 @@ Dispatch Account:
 - Log Out: Access to the Log Out page to sign out of their profile.
 
 [Daily Flight Planner](https://daily-flight-planner-3bcd72540a25.herokuapp.com/)
+
+| **User** | **Username** | **Password** |
+| :---: | :---: | :---: | 
+| **AdminOps**: | AdminOps  | christian |
+| **Dispatch**: | christian  | Dispatch1 |
 
 ![Daily Flight Planner is responsive](static/images/AmIResponsive.png)
 
@@ -313,7 +318,7 @@ Friends and family members were asked to review the site and documentation to po
 
 | Bug | Problem | Cause | Solution |
 | :---: | :---: | :---: | :---: | 
-|  |  |
+|  Not unique Id for input field in flights.html | Error during validation | For Loop | id="stand_{{ flight.id }}_{{ loop.index }}" |
 
 ## Technologies Used
 
