@@ -255,7 +255,7 @@ Wireframes were produced using Balsamiq.
 | app.py | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/python/python.PNG)|
 
 - #### Accessibility 
-  - The site achieved a Lighthouse accessibility median score of 96% which confirms that the colours and fonts chosen are easy to read and accessible.
+  - The site achieved a Lighthouse accessibility median score of 99% which confirms that the colours and fonts chosen are easy to read and accessible.
 
     - Desktop
 
@@ -271,7 +271,7 @@ Wireframes were produced using Balsamiq.
 
 
 - #### Accessibility 
-  - The site achieved a Lighthouse accessibility median score of 96% which confirms that the colours and fonts chosen are easy to read and accessible.
+  - The site achieved a Lighthouse accessibility median score of 90% which confirms that the colours and fonts chosen are easy to read and accessible.
 
     - Mobile  
 
