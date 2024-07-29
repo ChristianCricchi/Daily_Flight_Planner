@@ -293,6 +293,180 @@ Wireframes were produced using Balsamiq.
 | Test 3 | As a user, I want to be able to choose in a fast way all my option. | All acceptance criteria for the topic selection have been meet, as verified through user testing. | Yes |
 | Test 4 | As a user, I want be able to check the instructions of the app. | All acceptance criteria for dynamic have been meet, as verified through comprehensive user testing. | Yes |
 
+### Browser Testing
+- The Website was tested on Google Chrome, Firefox, Microsoft Edge, Safari browsers with no issues noted.
+    
+### Device Testing
+- The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, iPhoneX and iPad to ensure responsiveness on various screen sizes. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
+- I also used the following websites to test responsiveness:
+    - [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Fdaily-flight-planner-3bcd72540a25.herokuapp.com%2F)
+    - [Am I Responsive](https://ui.dev/amiresponsive?url=https://daily-flight-planner-3bcd72540a25.herokuapp.com/)
+
+
+### Friends and Family User Testing
+Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
+## Bugs
+
+| Bug | Problem | Cause | Solution |
+| :---: | :---: | :---: | :---: | 
+|  |  |
+
+## Technologies Used
+
+### Languages
+- HTML5
+- CSS
+- Jquery
+- JavaScript
+- Python
+
+### Frameworks - Libraries - Programs Used
+- [Am I Responsive](http://ami.responsivedesign.is/) - Used to verify responsiveness of website on different devices.
+- [Responsinator](http://www.responsinator.com/) - Used to verify responsiveness of website on different devices.
+- [Balsamiq](https://balsamiq.com/) - Used to generate Wireframe images.
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Used for overall development and tweaking, including testing responsiveness and performance.
+- [Font Awesome](https://fontawesome.com/) - Used for Social Media icons in footer.
+- [GitHub](https://github.com/) - Used for version control and hosting.
+- [Google Fonts](https://fonts.google.com/) - Used to import and alter fonts on the page.
+- [TinyPNG](https://tinypng.com/) - Used to compress images to reduce file size without a reduction in quality.
+- [W3C](https://www.w3.org/) - Used for HTML & CSS Validation.
+- [JavaScript Validation](https://JSHint.com) - Used to validate the JavaScript code.
+- [pep8ci](https://pep8ci.herokuapp.com/) - Used to validate the Python code.
+- [Flask](https://pypi.org/project/Flask/) - Micro framework for site templating.
+- [Materialize v1.0.0](https://materializecss.com) - The framework for the website.
+- [Font Awesome](https://fontawesome.com/) - For the iconography on the website.
+- [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - Templating engine.
+- [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
+
+### Programs
+
+- [Favicon](https://favicon.io/) - To create the favicon for the site.
+
+- [Heroku](https://www.heroku.com) - For website deployment.
+
+- [MongoDB](https://www.mongodb.com) - The database used for storing information for the site.
+
+
+## Deployment & Local Development
+
+### MongoDB Non-Relational Database
+
+This project uses [MongoDB](https://www.mongodb.com) for the Non-Relational Database.
+
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select __New__ in the top-right corner of your Heroku Dashboard, and select __Create new app__ from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select __Create App__.
+- From the new app __Settings__, click __Reveal Config Vars__, and set your environment variables.
+
+| Key | Value |
+| --- | --- |
+| `DATABASE_URL` | user's own value |
+| `IP` | 0.0.0.0 |
+| `MONGO_DBNAME` | user's own value |
+| `MONGO_URI` | user's own value |
+| `PORT` | 5000 |
+| `SECRET_KEY` | user's own value |
+
+Heroku needs two additional files in order to deploy properly.
+
+- requirements.txt
+- Procfile
+
+You can install this project's __requirements__ (where applicable) using:
+
+- `pip3 install -r requirements.txt`
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+
+- `pip3 freeze --local > requirements.txt`
+
+The **Procfile** can be created with the following command:
+
+- `echo web: python app.py > Procfile`
+- *replace __app.py__ with the name of your primary Flask app name; the one at the root-level*
+
+NOTE: The Procfile uses a capital P and doesn't have a file extension on the end.
+
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either:
+
+- Select __Automatic Deployment__ from the Heroku app.
+
+Or:
+
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+	- `git push heroku main`
+
+The project should now be connected and deployed to Heroku!
+
+### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+
+- `pip3 install -r requirements.txt`.
+
+#### How to Fork
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ChristianCricchi/Daily_Flight_Planner)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+#### How to Clone
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://github.com/ChristianCricchi/Daily_Flight_Planner) 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git shell or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/ChristianCricchi/Daily_Flight_Planner`
+7. Press Enter to create your local clone.
+
+## Credits
+
+### Content
+All educational content was sourced from the below websites:
+- [Code Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+NRDB_L5+2/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/0d4e3419132440d9b2c0943f80dc54a8/?child=first)
+
+### Media
+
+All images and videos were sourced from the below websites.
+
+- [Favicon](https://favicon.io/)
+
+## Acknowledgments
+
+My lovely wife Vivian for her support, advice and help in the crisis moments.
+
+My mentor Antonio for his support and advice.
+
+Amy for the interesting and useful information shared on oct-2023-pla weekly meeting.
+
+The Code Institute slack community for their quick responses and very helpful feedback. 
+
+
+
+
+
+
+
+
 
 
 
