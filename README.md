@@ -226,13 +226,33 @@ Wireframes were produced using Balsamiq.
 
 | File | Test | Pass | Image |
 | :---: | :---: | :---: | :---: | 
-|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
-|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
-|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](docs/html/highscoresHtml.PNG)|
-|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
-|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
-|  | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image]()|
+| about.html | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/html/About.PNG)|
+| Add_flight.html | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/html/AddFlight.PNG)|
+| logIn.html | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/html/LogIn.PNG)|
+| LogOut.html | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/html/Logout.PNG)|
+| register.html | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/html/Register.PNG)|
+| report.html | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/html/Report.PNG)|
 
+- #### CSS
+    - No errors were found when passing through the official W3C CSS Validator
+
+| File | Test | Pass | Image |
+| :---: | :---: | :---: | :---: | 
+| style.css | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/css/Style.PNG)|
+
+- #### JS
+    - No errors were found when passing through the JavaScript validation from JSHint.com
+
+| File | Test | Pass | Image |
+| :---: | :---: | :---: | :---: | 
+| script.js | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/js/JS.PNG)|
+
+- #### Python
+    - No errors were found when passing through the JavaScript validation from JSHint.com
+
+| File | Test | Pass | Image |
+| :---: | :---: | :---: | :---: | 
+| app.py | The test consists of placing the file in the validator and verifying that there are no errors. | Yes |![Nav bar image](static/images/docs/Test/python/python.PNG)|
 
 
 
