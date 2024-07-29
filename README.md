@@ -125,7 +125,7 @@ Wireframes were produced using Balsamiq.
 
 | Profile page| Image | 
 | :---: | :---: | 
-|  When the user clicks the "login button" they are welcome message and different buttond where the user can go: | ![Nav bar image](static/images/docs/AdminOps/Profile.png) |
+|  When the user clicks the "login button" there is a welcome message and different button where the user can go: | ![Nav bar image](static/images/docs/AdminOps/Profile.png) |
    **Home**: Clickin on Home the user can access the Home page. By clicking, you will encounter the list of flights for the day, an area where you can search in the database, and two buttons where you can delete or edit flights. | ![Nav bar image](static/images/docs/AdminOps/Home.png) |
    **About**: The user, by clicking on the About button, will encounter a page with an explanation of the app and a button that, when clicked, will return them to the Home page.  | ![Nav bar image](static/images/docs/AdminOps/About.png) |
    **Report**: When the user clicks on the report button, they encounter a form where they can enter the report data and a button to send the report to the database. At the bottom, they can view all the reports currently in the database.  | ![Nav bar image](static/images/docs/AdminOps/Report.png) |
@@ -193,6 +193,21 @@ Wireframes were produced using Balsamiq.
    **Register**: y filling out the form and clicking on register, the user will create a new account. | ![Nav bar image](static/images/docs/Register&Logout/Register1.png) |
    **Register**: New Account created | ![Nav bar image](static/images/docs/Register&Logout/Register2.png) |
    **Log Out**: By clicking the "Log Out" button, the user will exit the system. | ![Nav bar image](static/images/docs/Register&Logout/LogOut.png) |
+
+
+   | Log In Dispatcher Page| Image | 
+| :---: | :---: | 
+| When the user enters the username and password and clicks the "Log In" button, they will enter the Dispatch User profile.| ![Nav bar image](stati) |
+
+| Dispatch Profile page| Image | 
+| :---: | :---: | 
+|  When the user clicks the "login button" there is welcome message and different button where the user can go: | ![Nav bar image](stati) |
+   **Home**: Clickin on Home the user can access the Home page. By clicking, you will encounter the list of flights for the day, an area where you can search in the database. | ![Nav bar image](stati) |
+   **About**: The user, by clicking on the About button, will encounter a page with an explanation of the app and a button that, when clicked, will return them to the Home page.  | ![Nav bar image](stati) |
+   **Report**: When the user clicks on the report button, they encounter a form where they can enter the report data and a button to send the report to the database. At the bottom, they can view all the reports currently in the database.  | ![Nav bar image](stati) |
+   **Report**:  | ![Nav bar image](stati) |
+   **Log Out**: When the user clicks on "Log Out", they are logged out of the system and automatically redirected to the "Log In" page. | ![Nav bar image](s) |
+
 
 
 
