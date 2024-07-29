@@ -76,12 +76,12 @@ Lower panel: Dark purple (#8E24AA) with white text.
 General text: Mainly white, with some exceptions in black for improved readability.
 In summary, the color scheme is vibrant and well-contrasted, designed to attract attention and facilitate visual interaction.
 
-
 ### Fonts
 
-The Oswald font is the main font used throughout the whole website. This font was imported via Google Fonts. I am using Sans Serif as a backup font, in case for any reason the main font is not being imported into the site correctly.
+The Oswald font is the main font used throughout the whole website. This font was imported via [Google Fonts](https://fonts.google.com/). I am using Sans Serif as a backup font, in case for any reason the main font is not being imported into the site correctly.
 
 ## Wireframes
+
 Wireframes were produced using Balsamiq. 
 
 <details>
@@ -195,7 +195,7 @@ Wireframes were produced using Balsamiq.
 | Register and Log Out page| Image | 
 | :---: | :---: | 
 | By entering the "Register" page, the "AdminOps" user can create a new user.  | ![Nav bar image](static/images/docs/Register&Logout/Register.png) |
-   **Register**: y filling out the form and clicking on register, the user will create a new account. | ![Nav bar image](static/images/docs/Register&Logout/Register1.png) |
+   **Register**: By filling out the form and clicking on register, the user will create a new account. | ![Nav bar image](static/images/docs/Register&Logout/Register1.png) |
    **Register**: New Account created | ![Nav bar image](static/images/docs/Register&Logout/Register2.png) |
    **Log Out**: By clicking the "Log Out" button, the user will exit the system. | ![Nav bar image](static/images/docs/Register&Logout/LogOut.png) |
 
