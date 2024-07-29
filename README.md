@@ -22,7 +22,7 @@ Dispatch Account:
 
 [Daily Flight Planner](https://daily-flight-planner-3bcd72540a25.herokuapp.com/)
 
-![Daily Flight Planner is responsive](assets/img/AmIResponsive.png)
+![Daily Flight Planner is responsive](static/images/AmIResponsive.png)
 
 ## Site owner Goals
 
