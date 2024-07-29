@@ -181,6 +181,13 @@ Wireframes were produced using Balsamiq.
    **Add Flight**: | ![Nav bar image](static/images/docs/AddFlight/AddFlight3.png) |
    **Add Flight**: | ![Nav bar image](static/images/docs/AddFlight/AddFlight4.png) |
    
+| About page| Image | 
+| :---: | :---: | 
+| By entering the About page, the user can read information about the app. | ![Nav bar image](static/images/docs/About/About.png) |
+   **Add Flight**: They can read a glossary of some terms used. | ![Nav bar image](static/images/docs/About/About1.png) |
+   **Add Flight**: By pressing the "GO to Home" button, they will be redirected to the Home page. | ![Nav bar image](static/images/docs/About/About2.png) |
+   
+   
    
    
 
