@@ -186,6 +186,16 @@ Wireframes were produced using Balsamiq.
 | By entering the About page, the user can read information about the app. | ![Nav bar image](static/images/docs/About/About.png) |
    **Add Flight**: They can read a glossary of some terms used. | ![Nav bar image](static/images/docs/About/About1.png) |
    **Add Flight**: By pressing the "GO to Home" button, they will be redirected to the Home page. | ![Nav bar image](static/images/docs/About/About2.png) |
+
+| Register and Log Out page| Image | 
+| :---: | :---: | 
+| By entering the "Register" page, the "AdminOps" user can create a new user.  | ![Nav bar image](static/images/docs/Register&Logout/Register.png) |
+   **Register**: y filling out the form and clicking on register, the user will create a new account. | ![Nav bar image](static/images/docs/Register&Logout/Register1.png) |
+   **Register**: New Account created | ![Nav bar image](static/images/docs/Register&Logout/Register2.png) |
+   **Log Out**: By clicking the "Log Out" button, the user will exit the system. | ![Nav bar image](static/images/docs/Register&Logout/LogOut.png) |
+
+
+
    
    
    
