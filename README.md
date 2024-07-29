@@ -261,12 +261,14 @@ Wireframes were produced using Balsamiq.
 
 | File | Test | Pass | Image |
 | :---: | :---: | :---: | :---: | 
-|   | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
-|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
-|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
-| | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
-|   | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
-| l  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image]()
+| about.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Desktop/About.png)
+| dispatch.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Desktop/Dispatch.png)
+| home.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Desktop/Home.png)
+| login.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Desktop/LogIn.png)
+| newFlight.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Desktop/newFlight.png)
+| register.html  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Desktop/Register.png)
+| report.html  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Desktop/Report.png)
+
 
 - #### Accessibility 
   - The site achieved a Lighthouse accessibility median score of 96% which confirms that the colours and fonts chosen are easy to read and accessible.
@@ -275,12 +277,13 @@ Wireframes were produced using Balsamiq.
 
 | File | Test | Pass | Image |
 | :---: | :---: | :---: | :---: | 
-| | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
-|   | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
-|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
-|   | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
-|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
-|  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the mobile version. | Yes |![Nav bar image]()
+| about.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Mobile/About.png)
+| dispatch.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Mobile//Dispatch.png)
+| home.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Mobile/Home.png)
+| login.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Mobile/LogIn.png)
+| newFlight.html | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Mobile/AddFlight.png)
+| register.html  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Mobile/Register.png)
+| report.html  | The test consists of placing the file in the Lighthouse google tools and verifying the accessibility of the site. Tested the desktop version. | Yes |![Nav bar image](static/images/Lighthouse/Mobile/Report.png)
 
 
 - ### Testing User Stories
@@ -299,8 +302,8 @@ Wireframes were produced using Balsamiq.
 ### Device Testing
 - The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, iPhoneX and iPad to ensure responsiveness on various screen sizes. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
 - I also used the following websites to test responsiveness:
-    - [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Fdaily-flight-planner-3bcd72540a25.herokuapp.com%2F)
-    - [Am I Responsive](https://ui.dev/amiresponsive?url=https://daily-flight-planner-3bcd72540a25.herokuapp.com/)
+   - [Responsinator](http://www.responsinator.com/?url=https%3A%2F%2Fdaily-flight-planner-3bcd72540a25.herokuapp.com%2F)
+   - [Am I Responsive](https://ui.dev/amiresponsive?url=https://daily-flight-planner-3bcd72540a25.herokuapp.com/)
 
 
 ### Friends and Family User Testing
