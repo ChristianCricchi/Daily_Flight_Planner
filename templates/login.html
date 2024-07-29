@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Container row for the login form -->
 <div class="row">
+    <!-- Login form -->
     <form class="col s12 m8 offset-m2 form-spacing" method="POST" action="{{ url_for('login') }}">
+        <!-- Card panel with whitesmoke background -->
         <div class="card-panel whitesmoke">
+            <!-- Login header -->
             <h2 class="center-align">Log In</h2>
             <!-- username -->
             <div class="row">

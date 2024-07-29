@@ -1,15 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
+
+<!-- Main container with gray background -->
 <div class="gray-background">
+    <!-- Page title -->
     <h3 class="white-text text-darken-4 center-align pink" style="margin-top: 25px; font-size: 2.5rem; padding: 15px 0;">All Daily Flights</h3>
     <div class="row card-panel grey lighten-5">
         <form action="{{url_for('search')}}" method="post" class="col s12">
-            <div class="row valign wrapper center-align">
+            <div class="row align wrapper center-align">
+                 <!-- Search input field -->
                 <div class="input field col s12 m8">
                     <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
                      <input type="text" name="query" id="query" minlength="3" class="validate" required> 
                      <label for="query">Search Tasks</label>
                 </div>
+                <!-- Search and Reset buttons -->
                 <div class="col s12 m4">
                     <a href="{{ url_for('get_flights')}}" class="red btn-small text-shadow">Reset</a> 
                     <button type="submit" class=" pink darken-1 btn-small text-shadow">
@@ -20,14 +25,18 @@
         </form>        
     </div>
     
+     <!-- Check if there are any flights -->
     {% if flights | length > 0 %}
     <div class="container white">
+        <!-- Collapsible list of flights -->
         <ul class="collapsible">
             {% for flight in flights %}
             <li>
+                <!-- Collapsible header -->
                 <div class="collapsible-header white-text pink darken-4 text-shadow">
                     <div class="col s3">
                         <i class="fas fa-angle-down"></i>
+                        <!-- Edit and Dispatch buttons (only visible to flight creator) -->
                         {% if session.user|lower == flight.created_by|lower %}
                         <div class="button-container">
                             <a href="{{ url_for('dispatched_flight', flight_id=flight._id) }}" class="btn-small green accent-4 confirm-btn">Dispatched</a>
@@ -36,16 +45,16 @@
                         {% endif %}
                     </div>
                     
+                    <!-- Flight information -->
                     <div class="col s9">
                         <strong>{{ flight.dispatch_name }}</strong> : {{ flight.date }}
+                        <!-- Special assistance icon -->
                         {% if flight.special_assistance == "on" %}
                             <i class="fas fa-exclamation-circle white-text text-lighten-2 tooltipped"
                             data-position="right" data-tooltip="Special Assistance!"></i>
                         {% endif %}
                     </div>
-
                 </div>
-
 
                 <div class="collapsible-body">
                     <!-- stand section -->
@@ -66,7 +75,6 @@
                         </div>
                     </div>
             
-
                     <!-- type of aircraft section -->
                     <div class="row">
                         <div class="input-field col s6">
